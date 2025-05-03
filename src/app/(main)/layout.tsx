@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "@/styles/globals.css";
 import { bebasFont, nunitoFont } from "@/lib/font.js";
 import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
   title: "Jonathan Mendoza",
@@ -23,6 +24,7 @@ export default function RootLayout({
         <main className='flex-grow'>{children}</main>
 
         {/* Footer sticks to bottom */}
+        <Footer />
       </body>
     </html>
   );

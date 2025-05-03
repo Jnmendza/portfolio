@@ -30,7 +30,7 @@ const Projects = () => {
 
   return (
     <div className='px-6 mt-4'>
-      <div className={`bg-blackBlue flex justify-between p-4`}>
+      <div className={`bg-blackBlue rounded-lg flex justify-between p-4`}>
         <h1 className={`${bebasFont.className} text-4xl`}>Recent Projects</h1>
         <button className='flex items-center cursor-pointer hover:text-primary transition-transform transform hover:-translate-x-1'>
           <p className='font-bold text-2xl mr-2'>See all</p>
