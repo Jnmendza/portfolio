@@ -1,4 +1,4 @@
-import { CardProps } from "@/types";
+import { Project } from "@/types";
 import Image from "next/image";
 import Link from "next/link";
 import { FaGithub, FaLink, FaFigma, FaReact } from "react-icons/fa";
@@ -9,7 +9,7 @@ const ProjectCard = ({
   title,
   subTitle,
   description,
-}: CardProps) => (
+}: Project) => (
   <Link href={`/projects/${slug}`}>
     <div className='w-full md:flex-1 rounded-lg overflow-hidden shadow-lg bg-white  cursor-pointer transform transition-transform duration-200 hover:scale-102'>
       {/* Image with fixed dimensions */}

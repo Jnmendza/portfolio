@@ -7,14 +7,14 @@ export type Feature = {
   }[];
 };
 
-export type CardProps = {
+export type Project = {
   imageUrl: string;
   slug: string;
   title: string;
   subTitle: string;
   description: string;
-  projectLink: string;
-  githubLink: string;
-  techStack: IconType[];
-  features: Feature[];
+  projectLink?: string;
+  githubLink?: string;
+  techStack?: IconType[];
+  features?: Feature[];
 };
