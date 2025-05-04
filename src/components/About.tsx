@@ -1,4 +1,5 @@
 import { bebasFont } from "@/lib/font";
+import Link from "next/link";
 import React from "react";
 
 const About = () => {
@@ -16,9 +17,12 @@ const About = () => {
         to life
       </p>
       <div className='w-full flex justify-end mt-4'>
-        <button className='bg-background cursor-pointer text-primary rounded-lg py-2 px-4 transform transition-transform duration-200 hover:scale-110'>
+        <Link
+          href={"/about"}
+          className='bg-background cursor-pointer text-primary rounded-lg py-2 px-4 transform transition-transform duration-200 hover:scale-110'
+        >
           More...
-        </button>
+        </Link>
       </div>
     </div>
   );
