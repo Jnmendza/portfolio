@@ -12,14 +12,9 @@ export async function generateStaticParams() {
   }));
 }
 
-const ProjectPage = ({
-  params,
-  searchParams,
-}: {
-  params: { slug: string };
-  searchParams: { from?: string };
-}) => {
-  const project = PROJECTS.find((p) => p.slug === params.slug);
+const ProjectPage = async ({ params }: { params: { slug: string } }) => {
+  const paramsData = await params;
+  const project = PROJECTS.find((p) => p.slug === paramsData.slug);
   if (!project) return <div>No project found</div>;
   const {
     imageUrl,
@@ -32,13 +27,11 @@ const ProjectPage = ({
     features,
   } = project;
 
-  const backPath = searchParams.from === "home" ? "/" : "/projects";
-
   return (
     <div className='px-6 mt-4 space-y-4'>
       <div className='bg-blackBlue w-full p-6 text-start text-xl mt-20'>
         <Link
-          href={backPath}
+          href={"/projects"}
           className='flex items-center cursor-pointer hover:text-primary transition-transform transform hover:-translate-x-1 space-x-2'
         >
           <FaArrowLeft size={20} />

@@ -1,7 +1,7 @@
 import { Project } from "@/types";
 import Image from "next/image";
 import Link from "next/link";
-import { FaGithub, FaLink, FaFigma, FaReact } from "react-icons/fa";
+// import { FaGithub, FaLink, FaFigma, FaReact } from "react-icons/fa";
 
 const ProjectCard = ({
   slug,
@@ -9,6 +9,7 @@ const ProjectCard = ({
   title,
   subTitle,
   description,
+  techStack,
 }: Project) => (
   <Link
     href={{
@@ -37,10 +38,9 @@ const ProjectCard = ({
         <p className='text-gray-500 mb-6'>{description}</p>
 
         <div className='flex gap-4'>
-          <FaGithub className='text-gray-700 w-5 h-5' />
-          <FaLink className='text-gray-700 w-5 h-5' />
-          <FaFigma className='text-gray-700 w-5 h-5' />
-          <FaReact className='text-gray-700 w-5 h-5' />
+          {techStack?.map((Icon, index) => (
+            <Icon key={index} className='text-gray-700 w-5 h-5' />
+          ))}
         </div>
       </div>
     </div>
