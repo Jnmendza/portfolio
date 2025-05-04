@@ -19,7 +19,7 @@ const About = () => {
       <div className='w-full flex justify-end mt-4'>
         <Link
           href={"/about"}
-          className='bg-background cursor-pointer text-primary rounded-lg py-2 px-4 transform transition-transform duration-200 hover:scale-110'
+          className='bg-background cursor-pointer text-primary rounded-lg py-2 px-4 hover:scale-[1.02]'
         >
           More...
         </Link>

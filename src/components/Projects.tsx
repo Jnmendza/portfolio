@@ -7,7 +7,7 @@ import Link from "next/link";
 
 const Projects = () => {
   return (
-    <div className='px-6 mt-4'>
+    <div className='px-6 mt-4 space-y-4'>
       <div className={`bg-blackBlue rounded-lg flex justify-between p-4`}>
         <h1 className={`${bebasFont.className} text-4xl`}>Recent Projects</h1>
         <Link

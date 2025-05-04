@@ -10,8 +10,15 @@ const ProjectCard = ({
   subTitle,
   description,
 }: Project) => (
-  <Link href={`/projects/${slug}`}>
-    <div className='w-full md:flex-1 rounded-lg overflow-hidden shadow-lg bg-white  cursor-pointer transform transition-transform duration-200 hover:scale-102'>
+  <Link
+    href={{
+      pathname: `/projects/${slug}`,
+      query: { from: "home" },
+    }}
+    as={`/projects/${slug}`}
+    className='block h-full'
+  >
+    <div className='w-full md:flex-1 rounded-lg overflow-hidden shadow-lg bg-white  cursor-pointer hover:scale-[1.02]'>
       {/* Image with fixed dimensions */}
       <div className='relative aspect-video bg-gray-200'>
         <Image
