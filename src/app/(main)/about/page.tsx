@@ -1,18 +1,16 @@
 import { IMAGE_URL } from "@/constants";
-import { bebasFont } from "@/lib/font";
 import Image from "next/image";
 import React from "react";
 import { HiDocumentDownload } from "react-icons/hi";
 import { FaGithub, FaLink, FaFigma, FaReact } from "react-icons/fa";
+import TitleBanner from "@/components/TitleBanner";
 
 const AboutPage = () => {
   const iconCss =
     "cursor-pointer transform transition-transform duration-200 hover:scale-110 text-primary w-10 h-10";
   return (
     <div className='px-6 mt-4 space-y-4'>
-      <div className='bg-blackBlue w-full p-6 text-center text-6xl mt-20'>
-        <h1 className={`${bebasFont.className}`}>About</h1>
-      </div>
+      <TitleBanner title='About' />
 
       <div className='flex flex-col bg-blackBlue rounded-lg p-6 md:flex-row gap-6 md:gap-8 items-start'>
         {/* Image Container - Left */}
