@@ -12,13 +12,13 @@ const Navbar = () => {
     { label: "Contact", href: "/contact" },
   ];
   return (
-    <nav className='p-6 z-100'>
+    <nav className='absolute w-full p-6 z-100'>
       <div className='flex justify-center space-x-16 '>
         {links.map((link, index) => (
           <Link
             href={link.href}
             key={index}
-            className={`cursor-pointer hover:text-primary font-bold ${
+            className={`cursor-pointer font-bold hover:text-primary transform transition-transform duration-200 hover:scale-110 ${
               pathname === link.href ? "text-primary" : "text-white"
             }`}
           >

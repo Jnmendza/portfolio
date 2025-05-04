@@ -16,7 +16,7 @@ const About = () => {
         to life
       </p>
       <div className='w-full flex justify-end mt-4'>
-        <button className='bg-background text-primary rounded-lg py-2 px-4'>
+        <button className='bg-background cursor-pointer text-primary rounded-lg py-2 px-4 transform transition-transform duration-200 hover:scale-110'>
           More...
         </button>
       </div>

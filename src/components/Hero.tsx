@@ -4,8 +4,8 @@ import { FaGithub, FaLinkedin } from "react-icons/fa";
 
 const Hero = () => {
   return (
-    <div className='relative min-h-screen w-full overflow-hidden -mt-32'>
-      {/* Background Text - Extends beyond both edges */}
+    <div className='relative h-screen w-full overflow-hidden'>
+      {/* Background Text Container (centered) */}
       <div
         className={`${bebasFont.className} absolute inset-0 z-0 flex flex-col justify-center overflow-hidden`}
       >
@@ -19,8 +19,12 @@ const Hero = () => {
         </div>
       </div>
 
-      {/* Perfectly Centered Content */}
-      <div className='relative z-10 h-screen flex flex-col justify-center items-center text-center p-8 space-y-4'>
+      {/* Vignettes */}
+      <div className='absolute left-0 top-0 h-full w-1/3 z-1 bg-gradient-to-r from-black to-transparent pointer-events-none' />
+      <div className='absolute right-0 top-0 h-full w-1/3 z-1 bg-gradient-to-l from-black to-transparent pointer-events-none' />
+
+      {/* Centered Content */}
+      <div className='absolute inset-0 z-10 flex flex-col justify-center items-center text-center p-8 space-y-4'>
         <p className='text-3xl font-bold text-primary'>Hey There I&apos;m</p>
         <h1 className={`text-9xl ${bebasFont.className} text-primary`}>
           Jonathan
@@ -29,8 +33,14 @@ const Hero = () => {
           Currently studying computer science and engineering.
         </p>
         <div className='flex space-x-10 mt-2 text-primary'>
-          <FaGithub size={50} />
-          <FaLinkedin size={50} />
+          <FaGithub
+            size={50}
+            className='cursor-pointer transform transition-transform duration-200 hover:scale-110'
+          />
+          <FaLinkedin
+            size={50}
+            className='cursor-pointer transform transition-transform duration-200 hover:scale-110'
+          />
         </div>
       </div>
     </div>

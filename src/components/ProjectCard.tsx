@@ -9,7 +9,7 @@ export type CardProps = {
 };
 
 const ProjectCard = ({ imageUrl, title, subTitle, description }: CardProps) => (
-  <div className='w-full md:flex-1 rounded-lg overflow-hidden shadow-lg bg-white hover:shadow-xl transition-shadow duration-300'>
+  <div className='w-full md:flex-1 rounded-lg overflow-hidden shadow-lg bg-white  cursor-pointer transform transition-transform duration-200 hover:scale-102'>
     {/* Image with fixed dimensions */}
     <div className='relative aspect-video bg-gray-200'>
       <Image
