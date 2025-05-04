@@ -18,7 +18,7 @@ const Navbar = () => {
           <Link
             href={link.href}
             key={index}
-            className={`cursor-pointer font-bold hover:text-primary transform transition-transform duration-200 hover:scale-110 ${
+            className={`cursor-pointer font-bold hover:text-primary hover:scale-[1.02] ${
               pathname === link.href ? "text-primary" : "text-white"
             }`}
           >

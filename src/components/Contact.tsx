@@ -1,11 +1,12 @@
 import { bebasFont } from "@/lib/font";
+import Link from "next/link";
 import React from "react";
 import { FaFigma, FaGithub, FaLink, FaReact } from "react-icons/fa";
 import { IoIosSend } from "react-icons/io";
 
 const Contact = () => {
   const iconCss =
-    "cursor-pointer transform transition-transform duration-200 hover:scale-110 text-gray-700 w-5 h-5";
+    "cursor-pointer transform transition-transform duration-200 hover:scale-110 text-mayGray w-5 h-5";
   return (
     <div className='px-6 mt-4'>
       <div className='flex p-6 rounded-lg justify-between bg-primary text-background'>
@@ -24,10 +25,13 @@ const Contact = () => {
             <FaFigma className={iconCss} />
             <FaReact className={iconCss} />
           </div>
-          <button className='mt-6 flex items-center justify-center rounded-2xl p-2 border-black border-2 border-solid cursor-pointer transform transition-transform duration-200 hover:scale-110'>
+          <Link
+            href={"/contact"}
+            className='mt-6 flex items-center justify-center rounded-2xl p-2 border-black border-2 border-solid cursor-pointer transform transition-transform duration-200 hover:scale-110'
+          >
             <p className='font-bold mr-2'>Contact Me</p>
             <IoIosSend size={20} />{" "}
-          </button>
+          </Link>
         </div>
       </div>
     </div>

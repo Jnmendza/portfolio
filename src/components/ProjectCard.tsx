@@ -1,7 +1,7 @@
 import { Project } from "@/types";
 import Image from "next/image";
 import Link from "next/link";
-import { FaGithub, FaLink, FaFigma, FaReact } from "react-icons/fa";
+// import { FaGithub, FaLink, FaFigma, FaReact } from "react-icons/fa";
 
 const ProjectCard = ({
   slug,
@@ -9,9 +9,17 @@ const ProjectCard = ({
   title,
   subTitle,
   description,
+  techStack,
 }: Project) => (
-  <Link href={`/projects/${slug}`}>
-    <div className='w-full md:flex-1 rounded-lg overflow-hidden shadow-lg bg-white  cursor-pointer transform transition-transform duration-200 hover:scale-102'>
+  <Link
+    href={{
+      pathname: `/projects/${slug}`,
+      query: { from: "home" },
+    }}
+    as={`/projects/${slug}`}
+    className='block h-full'
+  >
+    <div className='w-full md:flex-1 rounded-lg overflow-hidden shadow-lg bg-white  cursor-pointer hover:scale-[1.02]'>
       {/* Image with fixed dimensions */}
       <div className='relative aspect-video bg-gray-200'>
         <Image
@@ -29,11 +37,10 @@ const ProjectCard = ({
         <p className='text-sm text-primary mb-4'>{subTitle}</p>
         <p className='text-gray-500 mb-6'>{description}</p>
 
-        <div className='flex gap-4'>
-          <FaGithub className='text-gray-700 w-5 h-5' />
-          <FaLink className='text-gray-700 w-5 h-5' />
-          <FaFigma className='text-gray-700 w-5 h-5' />
-          <FaReact className='text-gray-700 w-5 h-5' />
+        <div className='flex space-x-2 text-2xl text'>
+          {techStack?.map((Icon, index) => (
+            <Icon key={index} />
+          ))}
         </div>
       </div>
     </div>

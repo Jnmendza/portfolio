@@ -4,13 +4,16 @@
   --background: #ffffff;
   --foreground: #131313;
   --primary: #d5ff3f;
+  /* --primary: #FFD700 */
   --blackBlue: #161b22;
+  --mayGray: #364153;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-primary: var(--primary);
+  --color-mayGray: var(--mayGray);
   --color-blackBlue: var(--blackBlue);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
@@ -21,7 +24,9 @@
     --background: #131313;
     --foreground: #ededed;
     --primary: #d5ff3f;
+    /* --primary: #FFD700 */
     --blackBlue: #161b22;
+    --mayGray: #364153;
   }
 }
 

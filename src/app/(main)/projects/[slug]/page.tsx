@@ -1,10 +1,10 @@
 import React from "react";
 import { PROJECTS } from "@/constants";
-import Link from "next/link";
 import { FaArrowLeft, FaGithub, FaLaptop } from "react-icons/fa";
 import Image from "next/image";
 import ProjectLink from "@/components/ProjectLink";
 import FeatureList from "@/components/FeatureList";
+import Link from "next/link";
 
 export async function generateStaticParams() {
   return PROJECTS.map((p) => ({
@@ -12,8 +12,9 @@ export async function generateStaticParams() {
   }));
 }
 
-const ProjectPage = ({ params }: { params: { slug: string } }) => {
-  const project = PROJECTS.find((p) => p.slug === params.slug);
+const ProjectPage = async ({ params }: { params: { slug: string } }) => {
+  const paramsData = await params;
+  const project = PROJECTS.find((p) => p.slug === paramsData.slug);
   if (!project) return <div>No project found</div>;
   const {
     imageUrl,
@@ -52,27 +53,35 @@ const ProjectPage = ({ params }: { params: { slug: string } }) => {
         <div className='flex-1 space-y-4 '>
           <h1 className='text-2xl font-bold'>{title}</h1>
           <h3 className='text-primary'>{subTitle}</h3>
-          <p className='text-sm text-gray-700 dark:text-gray-300 leading-relaxed'>
+          <p className='text-sm text-mayGray dark:text-gray-300 leading-relaxed'>
             {description}
           </p>
           <div className='mt-2'>
             <p className='font-bold'>Tech Stack</p>
             <div className='flex space-x-2 text-4xl mt-2'>
-              {techStack.map((Icon, index) => (
+              {techStack?.map((Icon, index) => (
                 <Icon key={index} />
               ))}
             </div>
           </div>
 
           <div className='flex space-x-4'>
-            <ProjectLink link={projectLink} Icon={FaLaptop} iconLabel='Demo' />
-            <ProjectLink link={githubLink} Icon={FaGithub} iconLabel='GitHub' />
+            <ProjectLink
+              link={projectLink || ""}
+              Icon={FaLaptop}
+              iconLabel='Demo'
+            />
+            <ProjectLink
+              link={githubLink || ""}
+              Icon={FaGithub}
+              iconLabel='GitHub'
+            />
           </div>
         </div>
       </div>
       <div className='bg-blackBlue rounded-lg p-6'>
         <h1 className='text-primary font-bold text-2xl'>Main Features</h1>
-        <FeatureList features={features} />
+        {features && <FeatureList features={features} />}
       </div>
     </div>
   );
