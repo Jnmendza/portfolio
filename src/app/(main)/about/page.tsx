@@ -26,7 +26,7 @@ const AboutPage = () => {
 
         {/* Text Content - Right */}
         <div className='flex-1 md:w-2/3'>
-          <p className='text-sm text-gray-700 dark:text-gray-300 leading-relaxed'>
+          <p className='text-sm text-mayGray dark:text-gray-300 leading-relaxed'>
             I&#39;m a Computer Science student at SRM Institute of Science and
             Technology. My passion lies in building user-friendly solutions that
             enhance overall user experiences. I am currently focused on React

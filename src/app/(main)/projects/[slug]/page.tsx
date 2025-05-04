@@ -53,7 +53,7 @@ const ProjectPage = async ({ params }: { params: { slug: string } }) => {
         <div className='flex-1 space-y-4 '>
           <h1 className='text-2xl font-bold'>{title}</h1>
           <h3 className='text-primary'>{subTitle}</h3>
-          <p className='text-sm text-gray-700 dark:text-gray-300 leading-relaxed'>
+          <p className='text-sm text-mayGray dark:text-gray-300 leading-relaxed'>
             {description}
           </p>
           <div className='mt-2'>

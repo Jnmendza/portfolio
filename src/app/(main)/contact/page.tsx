@@ -21,7 +21,7 @@ const ContactPage = () => {
               <div>
                 <label
                   htmlFor='name'
-                  className='block text-md font-bold text-gray-700'
+                  className='block text-md font-bold text-mayGray'
                 >
                   Name
                 </label>
@@ -36,7 +36,7 @@ const ContactPage = () => {
               <div>
                 <label
                   htmlFor='email'
-                  className='block text-md font-bold text-gray-700'
+                  className='block text-md font-bold text-mayGray'
                 >
                   Email
                 </label>
@@ -51,7 +51,7 @@ const ContactPage = () => {
               <div>
                 <label
                   htmlFor='message'
-                  className='block text-md font-bold text-gray-700'
+                  className='block text-md font-bold text-mayGray'
                 >
                   Message
                 </label>
