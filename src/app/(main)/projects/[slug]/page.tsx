@@ -12,9 +12,13 @@ export async function generateStaticParams() {
   }));
 }
 
-const ProjectPage = async ({ params }: { params: { slug: string } }) => {
-  const paramsData = await params;
-  const project = PROJECTS.find((p) => p.slug === paramsData.slug);
+const ProjectPage = async ({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) => {
+  const { slug } = await params;
+  const project = PROJECTS.find((p) => p.slug === slug);
   if (!project) return <div>No project found</div>;
   const {
     imageUrl,

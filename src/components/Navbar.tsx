@@ -12,8 +12,8 @@ const Navbar = () => {
     { label: "Contact", href: "/contact" },
   ];
   return (
-    <nav className='absolute w-full p-6 z-100'>
-      <div className='flex justify-center space-x-16 '>
+    <nav className='absolute w-full p-4 md:p-6 z-[100]'>
+      <div className='flex justify-between md:justify-center space-x-8 md:space-x-14 px-4 md:px-0'>
         {links.map((link, index) => (
           <Link
             href={link.href}
