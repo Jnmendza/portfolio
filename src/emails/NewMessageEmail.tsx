@@ -35,7 +35,7 @@ export const NewMessageEmail = ({ name, message }: EmailProps) => (
             New Message from {name}
           </Heading>
           <Section className='my-6 text-base leading-[26px]'>
-            <Text>{message}</Text>
+            <Text className='text-white'>{message}</Text>
           </Section>
           <Text className='text-base leading-[26px]'>
             Best regards,
