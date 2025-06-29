@@ -1,208 +1,466 @@
 import { Project } from "@/types";
-import { FaGithub, FaLink, FaFigma, FaReact } from "react-icons/fa";
+import { FaGithub, FaReact, FaYoutube } from "react-icons/fa";
+import {
+  SiTypescript,
+  SiShadcnui,
+  SiPrisma,
+  SiZod,
+  SiSanity,
+  SiGooglemaps,
+  SiVercel,
+  SiReacthookform,
+  SiJavascript,
+  SiFramer,
+  SiCss3,
+} from "react-icons/si";
+import { IoBarChartSharp } from "react-icons/io5";
+import {
+  RiNextjsLine,
+  RiTailwindCssFill,
+  RiSupabaseLine,
+  RiWindowsFill,
+} from "react-icons/ri";
+import { MdDataObject, MdOutlineSdStorage } from "react-icons/md";
 
-export const IMAGE_URL =
+export const IMAGE_PLACEHOLDER =
   "https://plus.unsplash.com/premium_photo-1661963212517-830bbb7d76fc?q=80&w=1086&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D";
 
+export const LINKEDIN_URL = "https://www.linkedin.com/in/jnmendza/";
+export const GITHUB_URL = "https://github.com/Jnmendza";
+
 export const PROJECTS: Project[] = [
+  // =================================================================
+  // Project 1: Early Doors
+  // =================================================================
   {
-    imageUrl: IMAGE_URL,
-    slug: "slug-proj1",
-    title: "Project Title",
-    subTitle: "Project Subtitle",
+    imageUrl:
+      "https://qtmkwwvomuvavuoaqjcn.supabase.co/storage/v1/object/public/ed-public/portfolio/ed-ss.png",
+    slug: "early-doors",
+    title: "Early Doors",
+    subTitle: "A Hub for San Diego's Football Supporters",
     description:
-      "This project is a portfolio website developed using React.js. The website is designed to showcase the user's skills, projects, and services. It features a modern and clean design with smooth navigation and responsive layout.",
-    projectLink: "somefakelink.com",
-    githubLink: "otherfakelink.com",
-    techStack: [FaGithub, FaLink, FaFigma, FaReact],
+      "A map-based web app that helps fans in San Diego find venues hosting watch parties for football clubs from around the world. With an admin dashboard for managing events, clubs, and supporter groups, EarlyDoors empowers local fan communities to organize and discover matchday experiences in their city.",
+    projectLink: "your-live-app-url-here",
+    githubLink: "your-github-repo-url-here",
+    projectSummary:
+      "Early Doors is a web application designed to bridge the gap between San Diego's passionate football supporters and the local establishments that broadcast the games. As the city's soccer culture flourishes with the arrival of SDFC, this platform provides a vital service: 'Find your tribe and enjoy watching your club's games with the same passion and support.' The application features an interactive map for users to discover watch party venues and a comprehensive admin dashboard for managing all underlying data, including venues, clubs, supporter groups, and events.",
+    techStackDetailed: [
+      {
+        category: "Framework",
+        technologies: "Next.js 14 (App Router)",
+        icons: [RiNextjsLine],
+      },
+      {
+        category: "Language",
+        technologies: "TypeScript",
+        icons: [SiTypescript],
+      },
+      {
+        category: "Styling",
+        technologies: "Tailwind CSS, Shadcn/UI",
+        icons: [RiTailwindCssFill, SiShadcnui],
+      },
+      {
+        category: "State Mngmt",
+        technologies: "Zustand",
+        icons: [MdOutlineSdStorage],
+      },
+      {
+        category: "Form Mngmt",
+        technologies: "React Hook Form with Zod",
+        icons: [SiZod, SiReacthookform],
+      },
+      {
+        category: "Database/Backend",
+        technologies: "Supabase (PostgreSQL), Prisma",
+        icons: [RiSupabaseLine, SiPrisma],
+      },
+      { category: "CMS (Blog)", technologies: "Sanity.io", icons: [SiSanity] },
+      {
+        category: "APIs & Services",
+        technologies: "Google Maps, Distance Matrix, OAuth",
+        icons: [SiGooglemaps],
+      },
+      {
+        category: "Data Viz (Admin)",
+        technologies: "Recharts",
+        icons: [IoBarChartSharp],
+      },
+      {
+        category: "Deployment",
+        technologies: "Vercel, GitHub",
+        icons: [SiVercel, FaGithub],
+      },
+    ],
     features: [
       {
-        featureTitle: "Responsive Design",
+        featureTitle: "Interactive Venue Map",
         featurePoints: [
           {
-            desc: "The website is designed to be responsive, ensuring a seamless experience across various devices and screen sizes.",
+            desc: "Users can search for football clubs from the homepage, which redirects them to an interactive Google Map displaying all relevant venues.",
+          },
+          {
+            desc: "The map allows for dynamic filtering by club or venue name and provides a seamless discovery experience.",
           },
         ],
       },
       {
-        featureTitle: "Modern UI/UX",
+        featureTitle: "Dynamic Venue Information Cards",
         featurePoints: [
           {
-            desc: "The website features a modern and clean user interface, providing a pleasant user experience. It uses a consistent color scheme and typography throughout the site.",
+            desc: "Each venue on the map has a detailed information card displaying its address, website, and a list of affiliated clubs.",
+          },
+          {
+            desc: "Leveraging the Google Distance Matrix API, the card shows the real-time distance and estimated travel time from the user's location (with their permission).",
+          },
+        ],
+      },
+      {
+        featureTitle: "Comprehensive Admin Dashboard",
+        featurePoints: [
+          {
+            desc: "A secure, login-protected dashboard serves as the control center for the application. ",
+          },
+          {
+            desc: "Admins have full CRUD capabilities to manage venues, football clubs, supporter groups, and events. The dashboard also features data visualization tools like a calendar (React Big Calendar) and metric charts (Recharts) to track platform activity.",
+          },
+        ],
+      },
+      {
+        featureTitle: "Integrated Blog Platform",
+        featurePoints: [
+          {
+            desc: "To further engage the community and improve SEO, a blog was built using Sanity as a headless CMS.",
+          },
+          {
+            desc: "This allows for easy creation and management of articles and news related to the San Diego soccer scene.",
+          },
+        ],
+      },
+    ],
+    content: [
+      {
+        title: "Problem & Purpose",
+        blocks: [
+          {
+            type: "paragraph",
+            text: "The excitement around San Diego's football scene is at an all-time high. However, this growth has created a fragmented landscape for fans. As a supporter myself (member of Penya Blaugrana San Diego), I experienced firsthand the difficulty of finding official and unofficial watch parties for various clubs. Information is often scattered across social media, group chats, and disparate websites, making it a challenge for fans to find a place to watch a match with fellow supporters.",
+          },
+          {
+            type: "paragraph",
+            text: "The primary goal of Early Doors was to create a single source of truth for the local football community. I aimed to develop a robust, user-friendly platform that would:",
+          },
+          {
+            type: "list",
+            items: [
+              "Allow users to easily search for pubs and bars hosting games for their favorite teams.",
+              "Provide a seamless experience through Google OAuth and traditional authentication.",
+              "Build a powerful admin dashboard with full CRUD (Create, Read, Update, Delete) functionality to manage the platform's data.",
+              "Demonstrate a strong command of a modern front-end stack, full-stack development principles, and foundational skills like API construction, database management, and state management.",
+            ],
+          },
+        ],
+      },
+      {
+        title: "Development Process",
+        blocks: [
+          {
+            type: "paragraph",
+            text: "A structured and professional workflow was essential to the project's success.",
+          },
+          {
+            type: "list",
+            items: [
+              "Design & Prototyping: The process began in Figma, where I designed wireframes and high-fidelity mockups for the landing page, the map interface, and the admin dashboard. This design-first approach included creating database schema diagrams and planning the API structure, which ensured a clear vision before writing a single line of code.",
+              "Version Control: The project was managed using Git, following the GitFlow branching model. Features and pages were developed on separate branches, ensuring the main branch remained stable and deployable. Each feature was integrated through a formal Pull Request (PR) process.",
+              "Task Management: Project tasks and feature development were meticulously tracked using a Kanban board in Notion, allowing for clear prioritization and progress monitoring from conception to completion.",
+            ],
+          },
+        ],
+      },
+      {
+        title: "Technical Challenge & Solution",
+        blocks: [
+          {
+            type: "paragraph",
+            text: "The most significant technical challenge was implementing the multi-faceted search and filtering logic while ensuring optimal application performance. The goal was to allow users to find venues not just by name, but also by associated football clubs and supporter groups. Navigating this challenge deepened my understanding of data optimization, the importance of efficient state management, and the performance trade-offs between client-side and server-side data manipulation.",
+          },
+          {
+            type: "list",
+            items: [
+              "State Management with Zustand: I implemented Zustand for centralized state management. Its minimalistic API and hook-based approach helped in handling the global state of filters and search results efficiently without causing unnecessary component re-renders.",
+              "Optimized Data Fetching: I refactored my data retrieval logic to be more precise. Instead of fetching broad datasets and filtering on the client-side, I optimized the Prisma queries to perform the complex filtering and joining operations directly within the database. This significantly reduced the payload size and the processing load on the client.",
+              "Memoization: I strategically used React's memoization hooks (useMemo, useCallback) to prevent re-computation of expensive functions and re-rendering of components that did not have their props changed.",
+            ],
+          },
+        ],
+      },
+      {
+        title: "Lessons Learned & Future Scope",
+        blocks: [
+          {
+            type: "list",
+            items: [
+              "Reflection: This project was a tremendous learning experience. I gained a much deeper understanding of system design, the nuances of state management with Zustand, and the critical importance of data optimization. A key takeaway was the value of focusing on reaching a Minimum Viable Product (MVP) first, rather than getting sidetracked by adding features mid-development. I also learned to break down complex problems into smaller, more manageable tasks, which ultimately accelerated the development cycle. Had I prioritized optimizing my data retrieval strategies earlier, it would have saved considerable time.",
+              "Future Scope: The foundation is set for several exciting future enhancements. I envision integrating with social media APIs to automatically pull event data from supporter groups' feeds. Another ambitious feature would be to build an in-app community where fans can communicate, RSVP to events, and reserve space at venues, further solidifying Early Doors as the ultimate tool for San Diego's football community.",
+            ],
           },
         ],
       },
     ],
   },
+  // =================================================================
+  // Project 2: CD-Mixtape
+  // =================================================================
   {
-    imageUrl: IMAGE_URL,
-    slug: "slug-proj2",
-    title: "Project Title",
-    subTitle: "Project Subtitle",
+    imageUrl:
+      "https://qtmkwwvomuvavuoaqjcn.supabase.co/storage/v1/object/public/ed-public/portfolio/cd-mixtape-ss.png",
+    slug: "cd-mixtape",
+    title: "CD-Mixtape",
+    subTitle: "A Nostalgic Windows 98 Media Experience",
     description:
-      "This project is a portfolio website developed using React.js. The website is designed to showcase the user's skills, projects, and services. It features a modern and clean design with smooth navigation and responsive layout.",
-    projectLink: "somefakelink.com",
-    githubLink: "otherfakelink.com",
-    techStack: [FaGithub, FaLink, FaFigma, FaReact],
+      "A retro-inspired web application that combines the classic Windows 98 interface with modern YouTube integration, allowing users to create and play custom CD mixtapes in a fully interactive environment. Relive the late 90s computing experience with authentic UI elements and CD player functionality.",
+    projectLink:
+      "https://cd-mixtape-ifkkwrne7-jonatmendozas-projects.vercel.app/",
+    githubLink: "https://github.com/Jnmendza/cd-mixtape",
+    projectSummary:
+      "CD-Mixtape is a front-end application that captures the nostalgic essence of the late 90s personal computing era. By meticulously recreating the Windows 98 desktop environment, it offers users a unique, interactive experience. The core functionality allows users to search for tracks on YouTube, compile them into a 'mixtape,' and then 'burn' them to a virtual CD. The application then transitions to a classic CD player interface to play back the custom playlist, blending retro aesthetics with modern streaming technology.",
+    techStackDetailed: [
+      { category: "Core", technologies: "React 18", icons: [FaReact] },
+      {
+        category: "Language",
+        technologies: "JavaScript (ES6+)",
+        icons: [SiJavascript],
+      },
+      {
+        category: "Styling",
+        technologies: "98.css, Custom CSS",
+        icons: [SiCss3, RiWindowsFill],
+      },
+      {
+        category: "API Integration",
+        technologies: "YouTube Data API v3",
+        icons: [FaYoutube],
+      },
+      {
+        category: "State Mngmt",
+        technologies: "React Hooks (useState, useContext)",
+        icons: [FaReact],
+      },
+      {
+        category: "Deployment",
+        technologies: "Vercel, GitHub",
+        icons: [SiVercel, FaGithub],
+      },
+    ],
     features: [
       {
-        featureTitle: "Responsive Design",
+        featureTitle: "Authentic Windows 98 Experience",
         featurePoints: [
           {
-            desc: "The website is designed to be responsive, ensuring a seamless experience across various devices and screen sizes.",
+            desc: "Leveraged the 98.css library to recreate the classic Windows 98 desktop environment with pixel-perfect window chrome, icons, and interaction patterns.",
+          },
+          {
+            desc: "Implemented authentic system behaviors including window dragging, minimizing, and focus states.",
           },
         ],
       },
       {
-        featureTitle: "Modern UI/UX",
+        featureTitle: "Interactive CD Mixtape Creator",
         featurePoints: [
           {
-            desc: "The website features a modern and clean user interface, providing a pleasant user experience. It uses a consistent color scheme and typography throughout the site.",
+            desc: "Custom-built media player interface that mimics real CD player functionality with play/pause, track skipping, and volume controls.",
+          },
+          {
+            desc: "YouTube integration allowing users to create playlists of up to 10 videos and save them as named 'mixtapes'.",
+          },
+        ],
+      },
+      {
+        featureTitle: "Seamless State Management",
+        featurePoints: [
+          {
+            desc: "Implemented complex state logic to maintain playlist data between the mixtape creation and playback modes.",
+          },
+          {
+            desc: "Developed a smooth transition between 'burning' the CD and switching to player mode with preserved playlist data.",
+          },
+        ],
+      },
+      {
+        featureTitle: "Responsive Retro Design",
+        featurePoints: [
+          {
+            desc: "Maintained the Windows 98 aesthetic while ensuring full responsiveness across modern devices.",
+          },
+          {
+            desc: "Carefully balanced nostalgic UI elements with intuitive UX patterns for contemporary users.",
+          },
+        ],
+      },
+    ],
+    content: [
+      {
+        title: "Problem & Purpose",
+        blocks: [
+          {
+            type: "paragraph",
+            text: "In an age of hyper-sleek, minimalist design, there's a growing appreciation for the tangible, quirky interfaces of the past. This project began as a personal challenge to explore 'skeuomorphic' design—making digital items resemble their real-world counterparts. The goal was to create more than just a media player; it was to build an 'experience' that evokes the feeling of crafting a personal CD mixtape, a ritual many of us cherished.",
+          },
+          { type: "paragraph", text: "The primary objectives were to:" },
+          {
+            type: "list",
+            items: [
+              "Master advanced CSS and component styling to replicate a complex, retro UI.",
+              "Integrate with a major third-party API (YouTube) for dynamic content.",
+              "Handle complex, multi-stage state management within a client-side React application.",
+              "Showcase creativity and attention to detail in UI/UX design.",
+            ],
+          },
+        ],
+      },
+      {
+        title: "Technical Challenge & Solution",
+        blocks: [
+          {
+            type: "paragraph",
+            text: "The main challenge was managing the application's state across different 'modes' or 'scenes'—the desktop, the mixtape creator, and the CD player—without a formal state management library like Redux or Zustand. The state, including the Youtube results, the pending mixtape tracklist, and the final 'burned' playlist, needed to persist seamlessly as the user navigated the experience.",
+          },
+          { type: "paragraph", text: "Solution:" },
+          {
+            type: "list",
+            items: [
+              "I architected the state using a combination of React's `useState` for local component state and `useContext` for global state. A primary `AppContext` was created to hold the tracklist and application mode.",
+              "By lifting state up to this shared context, I could ensure that when the user 'burned' their CD, the playlist data was immediately available to the CD Player component without prop drilling, enabling a smooth and logical transition between interfaces.",
+            ],
+          },
+        ],
+      },
+      {
+        title: "Lessons Learned",
+        blocks: [
+          {
+            type: "paragraph",
+            text: "This project was a deep dive into the fundamentals of React state management, reinforcing the power and utility of the Context API for medium-sized applications. It also highlighted the importance of component architecture in preventing performance issues, especially when dealing with interactive, draggable UI elements. Finally, it was a valuable lesson in balancing nostalgic design with modern usability standards to create an app that is both fun and functional.",
           },
         ],
       },
     ],
   },
+  // =================================================================
+  // Project 3: Portfolio Website
+  // =================================================================
   {
-    imageUrl: IMAGE_URL,
-    slug: "slug-proj3",
-    title: "Project Title",
-    subTitle: "Project Subtitle",
+    imageUrl:
+      "https://qtmkwwvomuvavuoaqjcn.supabase.co/storage/v1/object/public/ed-public/portfolio/portfolio.png",
+    slug: "portfolio-website",
+    title: "Personal Portfolio",
+    subTitle: "Modern Developer Portfolio",
     description:
-      "This project is a portfolio website developed using React.js. The website is designed to showcase the user's skills, projects, and services. It features a modern and clean design with smooth navigation and responsive layout.",
-    projectLink: "somefakelink.com",
-    githubLink: "otherfakelink.com",
-    techStack: [FaGithub, FaLink, FaFigma, FaReact],
+      "A performant, minimalist portfolio built with Next.js and React 19, featuring responsive design, dark/light mode, and smooth animations. Showcases projects, skills, and contact information with optimal loading speed and SEO.",
+    projectLink: "https://www.jonathanmendoza.dev/",
+    githubLink: "https://github.com/Jnmendza/portfolio",
+    projectSummary:
+      "This portfolio itself is a testament to my skills and design philosophy. Built from the ground up with Next.js 14 and React 19, it serves as a high-performance, content-driven platform to showcase my work. The project emphasizes speed, accessibility, and a clean aesthetic. Key features include a dynamic project showcase, a themeable design with dark/light modes, and subtle animations to enhance the user experience, all while maintaining top-tier Lighthouse scores.",
+    techStackDetailed: [
+      {
+        category: "Framework",
+        technologies: "Next.js 14, React 19",
+        icons: [RiNextjsLine, FaReact],
+      },
+      {
+        category: "Language",
+        technologies: "TypeScript",
+        icons: [SiTypescript],
+      },
+      {
+        category: "Styling",
+        technologies: "Tailwind CSS, Framer Motion",
+        icons: [RiTailwindCssFill, SiFramer],
+      },
+      {
+        category: "Content",
+        technologies: "Local Constants (as CMS)",
+        icons: [MdDataObject],
+      },
+      {
+        category: "Deployment",
+        technologies: "Vercel, GitHub Actions",
+        icons: [SiVercel, FaGithub],
+      },
+    ],
     features: [
       {
-        featureTitle: "Responsive Design",
+        featureTitle: "Next.js Optimized Performance",
         featurePoints: [
           {
-            desc: "The website is designed to be responsive, ensuring a seamless experience across various devices and screen sizes.",
+            desc: "Leveraged Next.js static generation (SSG) and React Server Components for instantaneous loading and excellent Lighthouse scores.",
+          },
+          {
+            desc: "Implemented efficient code splitting and Next/Image optimization for optimal performance across all devices.",
           },
         ],
       },
       {
-        featureTitle: "Modern UI/UX",
+        featureTitle: "Responsive & Adaptive Design",
         featurePoints: [
           {
-            desc: "The website features a modern and clean user interface, providing a pleasant user experience. It uses a consistent color scheme and typography throughout the site.",
+            desc: "Built with a mobile-first approach using Tailwind CSS, ensuring a flawless display on all screen sizes.",
+          },
+          {
+            desc: "Includes a system-aware dark/light mode toggle with a smooth theme transition for comfortable viewing in any environment.",
+          },
+        ],
+      },
+      {
+        featureTitle: "Modern Development Practices",
+        featurePoints: [
+          {
+            desc: "Utilized React 19 features and TypeScript for a type-safe, maintainable, and modern code architecture.",
+          },
+          {
+            desc: "Configured with a CI/CD pipeline through GitHub Actions for automated checks and seamless deployment via Vercel.",
           },
         ],
       },
     ],
-  },
-  {
-    imageUrl: IMAGE_URL,
-    slug: "slug-proj4",
-    title: "Project Title",
-    subTitle: "Project Subtitle",
-    description:
-      "This project is a portfolio website developed using React.js. The website is designed to showcase the user's skills, projects, and services. It features a modern and clean design with smooth navigation and responsive layout.",
-    projectLink: "somefakelink.com",
-    githubLink: "otherfakelink.com",
-    techStack: [FaGithub, FaLink, FaFigma, FaReact],
-    features: [
+    content: [
       {
-        featureTitle: "Responsive Design",
-        featurePoints: [
+        title: "Purpose & Design Philosophy",
+        blocks: [
           {
-            desc: "The website is designed to be responsive, ensuring a seamless experience across various devices and screen sizes.",
+            type: "paragraph",
+            text: "A developer's portfolio should be more than a list of projects; it should be a demonstration of their capabilities. The purpose of this site was to create a platform that not only presents my work clearly but also embodies the principles of clean code, performance, and thoughtful design that I bring to every project.",
+          },
+          {
+            type: "paragraph",
+            text: "The design philosophy was 'content-first and performant'. The minimalist UI ensures that the projects are the heroes of the page. Every decision, from font choice to animation, was made to enhance the content, not distract from it.",
           },
         ],
       },
       {
-        featureTitle: "Modern UI/UX",
-        featurePoints: [
+        title: "Technical Implementation",
+        blocks: [
           {
-            desc: "The website features a modern and clean user interface, providing a pleasant user experience. It uses a consistent color scheme and typography throughout the site.",
+            type: "paragraph",
+            text: "The site's architecture is built around Next.js's App Router, which allows for a powerful combination of Server Components for static content and Client Components for interactive elements.",
           },
-        ],
-      },
-    ],
-  },
-  {
-    imageUrl: IMAGE_URL,
-    slug: "slug-proj5",
-    title: "Project Title",
-    subTitle: "Project Subtitle",
-    description:
-      "This project is a portfolio website developed using React.js. The website is designed to showcase the user's skills, projects, and services. It features a modern and clean design with smooth navigation and responsive layout.",
-    projectLink: "somefakelink.com",
-    githubLink: "otherfakelink.com",
-    techStack: [FaGithub, FaLink, FaFigma, FaReact],
-    features: [
-      {
-        featureTitle: "Responsive Design",
-        featurePoints: [
           {
-            desc: "The website is designed to be responsive, ensuring a seamless experience across various devices and screen sizes.",
+            type: "list",
+            items: [
+              "Static Site Generation (SSG): Project pages like this one are statically generated at build time, resulting in ultra-fast page loads and improved SEO.",
+              "Component-Based Theming: Dark/Light mode is handled efficiently using CSS variables and a React Context provider, avoiding FOUC (Flash of Unstyled Content) and ensuring instant theme switching.",
+              "Subtle Animations: Framer Motion was used to add tasteful animations to page transitions and interactive elements, providing a polished feel without compromising performance.",
+            ],
           },
         ],
       },
       {
-        featureTitle: "Modern UI/UX",
-        featurePoints: [
+        title: "Lessons Learned",
+        blocks: [
           {
-            desc: "The website features a modern and clean user interface, providing a pleasant user experience. It uses a consistent color scheme and typography throughout the site.",
-          },
-        ],
-      },
-    ],
-  },
-  {
-    imageUrl: IMAGE_URL,
-    slug: "slug-proj6",
-    title: "Project Title",
-    subTitle: "Project Subtitle",
-    description:
-      "This project is a portfolio website developed using React.js. The website is designed to showcase the user's skills, projects, and services. It features a modern and clean design with smooth navigation and responsive layout.",
-    projectLink: "somefakelink.com",
-    githubLink: "otherfakelink.com",
-    techStack: [FaGithub, FaLink, FaFigma, FaReact],
-    features: [
-      {
-        featureTitle: "Responsive Design",
-        featurePoints: [
-          {
-            desc: "The website is designed to be responsive, ensuring a seamless experience across various devices and screen sizes.",
-          },
-        ],
-      },
-      {
-        featureTitle: "Modern UI/UX",
-        featurePoints: [
-          {
-            desc: "The website features a modern and clean user interface, providing a pleasant user experience. It uses a consistent color scheme and typography throughout the site.",
-          },
-        ],
-      },
-    ],
-  },
-  {
-    imageUrl: IMAGE_URL,
-    slug: "slug-proj7",
-    title: "Project Title",
-    subTitle: "Project Subtitle",
-    description:
-      "This project is a portfolio website developed using React.js. The website is designed to showcase the user's skills, projects, and services. It features a modern and clean design with smooth navigation and responsive layout.",
-    projectLink: "somefakelink.com",
-    githubLink: "otherfakelink.com",
-    techStack: [FaGithub, FaLink, FaFigma, FaReact],
-    features: [
-      {
-        featureTitle: "Responsive Design",
-        featurePoints: [
-          {
-            desc: "The website is designed to be responsive, ensuring a seamless experience across various devices and screen sizes.",
-          },
-        ],
-      },
-      {
-        featureTitle: "Modern UI/UX",
-        featurePoints: [
-          {
-            desc: "The website features a modern and clean user interface, providing a pleasant user experience. It uses a consistent color scheme and typography throughout the site.",
+            type: "paragraph",
+            text: "Building your own portfolio is a unique challenge that forces you to be both the client, the designer, and the developer. This project reinforced the importance of planning and self-discipline. It was an excellent opportunity to experiment with the latest features of React 19 and the Next.js App Router in a production environment. The biggest takeaway was the power of incremental improvements—constantly refining Lighthouse scores, accessibility, and code structure leads to a far superior final product.",
           },
         ],
       },

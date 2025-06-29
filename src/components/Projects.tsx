@@ -20,7 +20,10 @@ const Projects = () => {
       </div>
       <div className='grid grid-cols-1 lg:grid-cols-3 gap-4'>
         {PROJECTS.slice(0, 3).map(
-          ({ imageUrl, slug, title, subTitle, description }, index) => (
+          (
+            { imageUrl, slug, title, subTitle, description, techStackDetailed },
+            index
+          ) => (
             <ProjectCard
               key={index}
               slug={slug}
@@ -28,6 +31,7 @@ const Projects = () => {
               title={title}
               subTitle={subTitle}
               description={description}
+              techStackDetailed={techStackDetailed}
             />
           )
         )}
