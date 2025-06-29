@@ -1,4 +1,4 @@
-import { IMAGE_URL } from "@/constants";
+import { IMAGE_PLACEHOLDER } from "@/constants";
 import Image from "next/image";
 import React from "react";
 import { HiDocumentDownload } from "react-icons/hi";
@@ -16,7 +16,7 @@ const AboutPage = () => {
         {/* Image Container - Left */}
         <div className='w-full md:w-1/3 flex-shrink-0 h-[350px] relative aspect-[3/4]'>
           <Image
-            src={IMAGE_URL}
+            src={IMAGE_PLACEHOLDER}
             alt='Profile picture'
             fill
             className='rounded-lg object-cover'

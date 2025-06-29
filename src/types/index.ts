@@ -7,6 +7,18 @@ export type Feature = {
   }[];
 };
 
+export type TechStackItem = {
+  category: string;
+  technologies: string;
+  icons?: IconType[];
+};
+
+export type ContentBlock = {
+  type: "paragraph" | "list";
+  text?: string;
+  items?: string[];
+};
+
 export type Project = {
   imageUrl: string;
   slug: string;
@@ -15,6 +27,11 @@ export type Project = {
   description: string;
   projectLink?: string;
   githubLink?: string;
-  techStack?: IconType[];
-  features?: Feature[];
+  projectSummary: string;
+  techStackDetailed: TechStackItem[];
+  features: Feature[];
+  content: {
+    title: string;
+    blocks: ContentBlock[];
+  }[];
 };

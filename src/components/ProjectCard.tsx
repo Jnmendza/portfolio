@@ -35,12 +35,10 @@ const ProjectCard = ({
       <div className='p-6 bg-blackBlue'>
         <h2 className='text-xl font-bold text-white mb-1'>{title}</h2>
         <p className='text-sm text-primary mb-4'>{subTitle}</p>
-        <p className='text-gray-500 mb-6'>{description}</p>
+        <p className='text-gray-500 mb-6 line-clamp-3'>{description}</p>
 
         <div className='flex space-x-2 text-2xl text'>
-          {techStack?.map((Icon, index) => (
-            <Icon key={index} />
-          ))}
+          {techStack?.map((Icon, index) => <Icon key={index} />)}
         </div>
       </div>
     </div>
