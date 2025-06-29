@@ -49,9 +49,21 @@ const AboutPage = () => {
             member, I&#39;m here to help bring ideas to life. Let&#39;s connect
             and create innovative solutions together!
           </p>
-          <button className='flex cursor-pointer items-center border-2 border-primary border-solid rounded-lg px-4 py-2 text-primary mt-4 hover:bg-primary hover:text-blackBlue transition-colors'>
+          {/* <button
+           className='flex cursor-pointer items-center border-2 border-primary border-solid rounded-lg px-4 py-2 text-primary mt-4 hover:bg-primary hover:text-blackBlue transition-colors'>
             Download Resume
             <HiDocumentDownload className='ml-2' />
+          </button> */}
+          <button>
+            <a
+              href='https://qtmkwwvomuvavuoaqjcn.supabase.co/storage/v1/object/public/ed-public/portfolio/jm-0625.pdf'
+              target='_blank'
+              rel='noopener noreferrer'
+              className='flex cursor-pointer items-center border-2 border-primary border-solid rounded-lg px-4 py-2 text-primary mt-4 hover:bg-primary hover:text-blackBlue transition-colors'
+            >
+              Download Resume
+              <HiDocumentDownload className='ml-2' />
+            </a>
           </button>
         </div>
       </div>

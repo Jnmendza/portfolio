@@ -40,6 +40,7 @@ const ProjectCard = ({
             alt={title}
             fill
             className='object-cover'
+            sizes='(max-width: 768px) 100vw, 33vw'
             priority={false}
           />
         </div>
