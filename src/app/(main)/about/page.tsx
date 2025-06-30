@@ -4,6 +4,8 @@ import React from "react";
 import { HiDocumentDownload } from "react-icons/hi";
 import { FaGithub, FaLink, FaFigma, FaReact } from "react-icons/fa";
 import TitleBanner from "@/components/TitleBanner";
+import ContactBtn from "@/components/ContactBtn";
+import Link from "next/link";
 
 const AboutPage = () => {
   const iconCss =
@@ -27,44 +29,38 @@ const AboutPage = () => {
         {/* Text Content - Right */}
         <div className='flex-1 md:w-2/3'>
           <p className='text-sm text-mayGray dark:text-gray-300 leading-relaxed'>
-            I&#39;m a Computer Science student at SRM Institute of Science and
-            Technology. My passion lies in building user-friendly solutions that
-            enhance overall user experiences. I am currently focused on React
-            Native, Expo, Firebase, and React, leveraging these technologies to
-            create responsive and functional applications. One of my ongoing
-            projects is Rescue Paws, a mobile app designed to facilitate the
-            rescue and adoption of stray and pet dogs. The app will soon be
-            published on the Play Store and App Store, and it incorporates
-            AI-driven features to guide users through the adoption process. In
-            addition to app development, I&#39;ve led the design and development
-            of platforms like the GitHub Community SRM website, which serves as
-            an all-in-one platform for the community. I&#39;ve also organized
-            and managed events such as hackathons and workshops, mentoring
-            others in UI/UX and graphic design. I thrive in Agile Scrum
-            environments and believe collaboration and teamwork are essential to
-            delivering successful projects. I&#39;m always eager to work on
-            impactful projects that challenge me to grow while also contributing
-            to meaningful outcomes. So, whether you&#39;re looking for a
-            dedicated developer, a creative designer, or a collaborative team
-            member, I&#39;m here to help bring ideas to life. Let&#39;s connect
-            and create innovative solutions together!
+            I&#39;m Jonathan, a Front-End Engineer based out of Oceanside,
+            California. I build fast, clean, user-friendly web experiences using
+            tools like React, TypeScript, and Tailwind. I&#39;ve worked on
+            everything from patient-facing healthcare apps to early-stage
+            startups, always focusing on smooth interactions, pixel-level
+            detail, and code that scales. Before tech, I was deep in the world
+            of design — which means I speak a little Figma and love
+            collaborating with designers to bring ideas to life. I enjoy working
+            on small, scrappy teams where engineers wear multiple hats and
+            product ideas move fast. Outside of code, I&#39;m all about music
+            (especially vinyl), photography, football (the global kind), and
+            exploring new places. I love building things that connect people —
+            whether that&#39;s helping someone book a home repair or discover a
+            cool local event. Right now, I&#39;m leveling up my engineering
+            skills, experimenting with some new project ideas, and always
+            looking to join teams where creativity and thoughtful UX matter. If
+            you&#39;re working on something cool — or just want to talk code,
+            design, or where to find the best tacos in North County — feel free
+            to reach out.
           </p>
-          {/* <button
-           className='flex cursor-pointer items-center border-2 border-primary border-solid rounded-lg px-4 py-2 text-primary mt-4 hover:bg-primary hover:text-blackBlue transition-colors'>
-            Download Resume
-            <HiDocumentDownload className='ml-2' />
-          </button> */}
-          <button>
-            <a
+          <div className='flex items-center mt-4 p-2 space-x-2'>
+            <Link
               href='https://qtmkwwvomuvavuoaqjcn.supabase.co/storage/v1/object/public/ed-public/portfolio/jm-0625.pdf'
               target='_blank'
               rel='noopener noreferrer'
-              className='flex cursor-pointer items-center border-2 border-primary border-solid rounded-lg px-4 py-2 text-primary mt-4 hover:bg-primary hover:text-blackBlue transition-colors'
+              className='flex cursor-pointer items-center border-2 border-primary border-solid rounded-lg px-4 py-2 text-primary hover:bg-primary hover:text-blackBlue transition-colors'
             >
               Download Resume
               <HiDocumentDownload className='ml-2' />
-            </a>
-          </button>
+            </Link>
+            <ContactBtn className='text-blackBlue' />
+          </div>
         </div>
       </div>
 
