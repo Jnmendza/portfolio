@@ -16,9 +16,11 @@ const Footer = () => {
           <h1
             className={`${bebasFont.className} text-3xl md:text-5xl leading-tight`}
           >
-            Something <span className='text-primary'>catchy</span> or{" "}
-            <span className='text-primary'>corny</span> to get a response.
+            Creative work starts with{" "}
+            <span className='text-primary'>curiosity</span> and ends in{" "}
+            <span className='text-primary'>clarity</span>.
           </h1>
+
           <p className='mt-2 md:mt-4 text-sm md:text-base'>
             Portfolio v2.3 © 2025 Mendoza.
           </p>
