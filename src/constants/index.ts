@@ -21,6 +21,7 @@ import {
   RiWindowsFill,
 } from "react-icons/ri";
 import { MdDataObject, MdOutlineSdStorage } from "react-icons/md";
+import { SiOpenai } from "react-icons/si";
 
 export const IMAGE_PLACEHOLDER =
   "https://plus.unsplash.com/premium_photo-1661963212517-830bbb7d76fc?q=80&w=1086&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D";
@@ -40,8 +41,8 @@ export const PROJECTS: Project[] = [
     subTitle: "A Hub for San Diego's Football Supporters",
     description:
       "A map-based web app that helps fans in San Diego find venues hosting watch parties for football clubs from around the world. With an admin dashboard for managing events, clubs, and supporter groups, EarlyDoors empowers local fan communities to organize and discover matchday experiences in their city.",
-    projectLink: "your-live-app-url-here",
-    githubLink: "your-github-repo-url-here",
+    projectLink: "https://earlydoors.vercel.app/",
+    githubLink: "https://github.com/Jnmendza/earlydoors",
     projectSummary:
       "Early Doors is a web application designed to bridge the gap between San Diego's passionate football supporters and the local establishments that broadcast the games. As the city's soccer culture flourishes with the arrival of SDFC, this platform provides a vital service: 'Find your tribe and enjoy watching your club's games with the same passion and support.' The application features an interactive map for users to discover watch party venues and a comprehensive admin dashboard for managing all underlying data, including venues, clubs, supporter groups, and events.",
     techStackDetailed: [
@@ -348,7 +349,149 @@ export const PROJECTS: Project[] = [
     ],
   },
   // =================================================================
-  // Project 3: Portfolio Website
+  // Project 3: AI-Powered Quiz App
+  // =================================================================
+  {
+    imageUrl:
+      "https://qtmkwwvomuvavuoaqjcn.supabase.co/storage/v1/object/public/ed-public/portfolio/aiquiz.png",
+    slug: "ai-quiz-generator",
+    title: "AI Quiz Generator",
+    subTitle: "Transform PDFs into personalized quizzes with AI",
+    description:
+      "Upload a PDF and instantly generate multiple-choice quizzes to test your knowledge. Designed for students, educators, and professionals looking to actively recall what they've read.",
+    projectLink: "https://ai-quiz-eight-indol.vercel.app/",
+    githubLink: "https://github.com/Jnmendza/ai-quiz",
+    projectSummary:
+      "The AI Quiz Generator is a study-focused web app that converts PDF content into interactive quizzes using the OpenAI API. It encourages active recall, a powerful learning technique, by allowing users to test themselves on any uploaded material. It's designed to be fast, intuitive, and effective for studying notes, textbooks, manuals, and more.",
+    techStackDetailed: [
+      {
+        category: "Framework",
+        technologies: "Next.js 14 (App Router)",
+        icons: [RiNextjsLine],
+      },
+      {
+        category: "Language",
+        technologies: "TypeScript",
+        icons: [SiTypescript],
+      },
+      {
+        category: "Styling",
+        technologies: "Tailwind CSS, Shadcn/UI",
+        icons: [RiTailwindCssFill, SiShadcnui],
+      },
+      {
+        category: "PDF Parsing",
+        technologies: "pdf-parse",
+        icons: [],
+      },
+      {
+        category: "API Integration",
+        technologies: "OpenAI GPT-4o",
+        icons: [SiOpenai],
+      },
+      {
+        category: "State Mngmt",
+        technologies: "React Hooks",
+        icons: [],
+      },
+      {
+        category: "Deployment",
+        technologies: "Vercel, GitHub",
+        icons: [SiVercel, FaGithub],
+      },
+    ],
+    features: [
+      {
+        featureTitle: "PDF Upload + Parsing",
+        featurePoints: [
+          {
+            desc: "Users can upload a PDF containing study content, lecture notes, or articles. The app extracts text and sends it to the AI for question generation.",
+          },
+          {
+            desc: "Displays the uploaded file name and disables upload button until a file is selected.",
+          },
+        ],
+      },
+      {
+        featureTitle: "AI-Generated Quizzes",
+        featurePoints: [
+          {
+            desc: "OpenAI's GPT-4o generates multiple-choice questions based on the content of the uploaded PDF.",
+          },
+          {
+            desc: "Includes explanations for each correct answer to enhance understanding.",
+          },
+        ],
+      },
+      {
+        featureTitle: "Results with Feedback",
+        featurePoints: [
+          {
+            desc: "After completing a quiz, users see a summary of their score with percentage and color-coded feedback.",
+          },
+          {
+            desc: "Correct answers are highlighted in green, while incorrect selections are marked in red alongside the correct option.",
+          },
+        ],
+      },
+      {
+        featureTitle: "Minimal UI with Dark Mode",
+        featurePoints: [
+          {
+            desc: "Clean, distraction-free interface styled with Tailwind and shadcn/ui components.",
+          },
+          {
+            desc: "Built-in dark mode toggle for better accessibility and comfort.",
+          },
+        ],
+      },
+    ],
+    content: [
+      {
+        title: "Purpose & Motivation",
+        blocks: [
+          {
+            type: "paragraph",
+            text: "Active recall is one of the most effective ways to study, yet many learners passively read and re-read material. I built the AI Quiz Generator to bridge this gap — turning static content into dynamic self-assessments with zero effort required from the user.",
+          },
+          {
+            type: "paragraph",
+            text: "The tool allows students and professionals alike to upload any PDF and instantly receive a quiz tailored to the contents. Whether it’s a lecture PDF, a user manual, or a policy document, the app helps test understanding quickly and effectively.",
+          },
+        ],
+      },
+      {
+        title: "Development Notes",
+        blocks: [
+          {
+            type: "list",
+            items: [
+              "Used pdf-parse to extract raw text from uploaded PDFs on the server.",
+              "Generated questions with GPT-4o using a structured prompt and returned a JSON array of questions, choices, and explanations.",
+              "Handled unpredictable AI output with JSON parsing safeguards and user-facing error alerts.",
+              "Stored answers in sessionStorage for client-side quiz state and result analysis.",
+              "Styled the UI with Tailwind CSS and used shadcn/ui for a clean, modern look.",
+            ],
+          },
+        ],
+      },
+      {
+        title: "Challenges & Learnings",
+        blocks: [
+          {
+            type: "list",
+            items: [
+              "Parsing unpredictable GPT output was a major challenge. I added logic to strip Markdown formatting like ```json blocks and fail gracefully.",
+              "Ensured minimum question count regardless of word count by enforcing a floor of 4 questions.",
+              "Improved UX by adding a progress bar, upload feedback, and interactive result feedback to reinforce correct and incorrect answers.",
+            ],
+          },
+        ],
+      },
+    ],
+  },
+  // =================================================================
+  // Project 4: Portfolio Website
   // =================================================================
   {
     imageUrl:

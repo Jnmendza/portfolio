@@ -6,6 +6,7 @@ import ProjectLink from "@/components/ProjectLink";
 import FeatureList from "@/components/FeatureList";
 import Link from "next/link";
 import type { ContentBlock } from "@/types";
+import { notFound } from "next/navigation";
 
 const ProjectSection = ({
   title,
@@ -52,7 +53,7 @@ const ProjectPage = async ({
 }) => {
   const { slug } = await params;
   const project = PROJECTS.find((p) => p.slug === slug);
-  if (!project) return <div>No project found</div>;
+  if (!project) notFound();
 
   const {
     imageUrl,
