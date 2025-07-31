@@ -1,8 +1,9 @@
+import { GITHUB_URL, LINKEDIN_URL } from "@/constants";
 import { bebasFont } from "@/lib/font";
 import Link from "next/link";
 import React from "react";
-import { FaFigma, FaGithub, FaLink, FaReact } from "react-icons/fa";
-import { IoIosSend } from "react-icons/io";
+import { FaLinkedin, FaGithub } from "react-icons/fa";
+import ContactBtn from "./ContactBtn";
 
 const Contact = () => {
   const iconCss =
@@ -20,18 +21,14 @@ const Contact = () => {
         <div className='flex flex-col items-end'>
           <p className='font-bold'>Follow me on</p>
           <div className='flex gap-4 mt-2'>
-            <FaGithub className={iconCss} />
-            <FaLink className={iconCss} />
-            <FaFigma className={iconCss} />
-            <FaReact className={iconCss} />
+            <Link href={GITHUB_URL}>
+              <FaGithub className={iconCss} />
+            </Link>
+            <Link href={LINKEDIN_URL}>
+              <FaLinkedin className={iconCss} />
+            </Link>
           </div>
-          <Link
-            href={"/contact"}
-            className='mt-6 flex items-center justify-center rounded-2xl p-2 border-black border-2 border-solid cursor-pointer transform transition-transform duration-200 hover:scale-110'
-          >
-            <p className='font-bold mr-2'>Contact Me</p>
-            <IoIosSend size={20} />{" "}
-          </Link>
+          <ContactBtn className='mt-6' />
         </div>
       </div>
     </div>

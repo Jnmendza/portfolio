@@ -1,36 +1,105 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 💼 Jonathan Mendoza – Developer Portfolio
 
-## Getting Started
+A modern, high-performance portfolio built with Next.js 14 and React 19. This site is designed to showcase my projects, skills, and design philosophy through minimal UI, fast load times, dark mode support, and subtle animations. Fully responsive, SEO-optimized, and deployable on Vercel.
 
-First, run the development server:
+---
+
+## 🌟 Features
+
+- ⚡ Blazing fast page loads via **Next.js SSG** and **React Server Components**
+- 🌙 System-aware **dark/light mode toggle** with smooth transitions
+- 📱 Fully **responsive** and mobile-first design with Tailwind CSS
+- 🎬 Tasteful page and component animations using Framer Motion
+- 🧠 Built with **React 19**, **TypeScript**, and modern coding practices
+- 🚀 Deployed with **GitHub Actions** and hosted on **Vercel**
+
+---
+
+## 🧰 Tech Stack
+
+| Category       | Tools / Libraries                 |
+| -------------- | --------------------------------- |
+| **Framework**  | Next.js 15 (App Router), React 19 |
+| **Language**   | TypeScript                        |
+| **Styling**    | Tailwind CSS, Framer Motion       |
+| **Content**    | Local Constants as CMS            |
+| **Deployment** | Vercel, GitHub Actions            |
+
+---
+
+## 🚀 Live Demo
+
+🔗 [www.jonathanmendoza.dev](https://www.jonathanmendoza.dev/)  
+🛠️ [GitHub Repo](https://github.com/Jnmendza/portfolio)
+
+---
+
+## 📁 Project Structure
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+app/
+├── layout.tsx // Theme provider, shared layout
+├── page.tsx // Home route
+├── projects/ // Dynamic project pages
+├── components/ // Shared UI components (Navbar, Footer, etc.)
+├── lib/ // Utility functions
+├── content/ // Constants and project metadata
+public/
+├── assets/ // Image and media assets
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 📌 Core Features
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### 🔥 Next.js Optimized Performance
 
-## Learn More
+- Uses **static site generation (SSG)** for fast page loads and SEO.
+- Implements image optimization via `next/image`.
+- Splits code by route for minimal initial load size.
 
-To learn more about Next.js, take a look at the following resources:
+### 🎨 Responsive & Adaptive Design
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- Mobile-first layout with Tailwind breakpoints.
+- Theme toggle supports dark/light with user preference persistence.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### 🛠️ Modern Development Practices
 
-## Deploy on Vercel
+- Built with **React 19** and **TypeScript** for type safety and maintainability.
+- CI/CD with **GitHub Actions** ensures tests and deployments are automated.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 🧠 Purpose & Design Philosophy
+
+> A portfolio shouldn’t just show what you’ve built — it should **demonstrate how you build**.
+
+This site was created as both a personal branding platform and a technical showcase. Every UI choice, animation, and architectural decision was made with clarity and performance in mind. The minimal UI puts the spotlight on my work, while modern development practices ensure the site is future-ready.
+
+---
+
+## 🛠️ Development Notes
+
+- Smooth animations via **Framer Motion** for transitions and hover states
+- Projects and skills defined as **TypeScript constants** for easy scaling
+- Focused on achieving 100+ scores in Lighthouse across all metrics
+
+---
+
+## 💡 Lessons Learned
+
+Building your own portfolio is humbling — you're the designer, the developer, and the stakeholder. This project helped me:
+
+- Learn the **App Router** deeply with real-world use cases
+- Understand the balance between aesthetics and accessibility
+- Practice delivering a polished product with a tight scope
+
+---
+
+## 🙌 Acknowledgements
+
+Thanks to the open-source tools and design inspiration from other devs pushing clean, beautiful, performant personal sites.
+
+---
+
+🧠 Built with care by [Jonathan Mendoza](https://www.jonathanmendoza.dev)

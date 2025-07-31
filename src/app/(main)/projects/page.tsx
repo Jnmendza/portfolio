@@ -10,16 +10,7 @@ const ProjectsPage = () => {
       <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4'>
         {PROJECTS.map(
           (
-            {
-              imageUrl,
-              slug,
-              title,
-              subTitle,
-              description,
-              projectLink,
-              githubLink,
-              techStack,
-            },
+            { imageUrl, slug, title, subTitle, description, techStackDetailed },
             index
           ) => (
             <ProjectCard
@@ -29,9 +20,7 @@ const ProjectsPage = () => {
               title={title}
               subTitle={subTitle}
               description={description}
-              projectLink={projectLink}
-              githubLink={githubLink}
-              techStack={techStack}
+              techStackDetailed={techStackDetailed}
             />
           )
         )}

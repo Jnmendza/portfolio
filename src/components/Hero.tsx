@@ -29,7 +29,7 @@ const Hero = () => {
           Jonathan
         </h1>
         <p className='text-xl font-bold max-w-80 text-primary -mt-4'>
-          Currently studying computer science and engineering.
+          Thriving where creativity meets thoughtful execution.
         </p>
         <div className='flex space-x-10 mt-2 text-primary'>
           <Link href={"https://github.com/Jnmendza"}>
