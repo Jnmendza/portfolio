@@ -12,6 +12,7 @@ import {
   SiJavascript,
   SiFramer,
   SiCss3,
+  SiMysql,
 } from "react-icons/si";
 import { IoBarChartSharp } from "react-icons/io5";
 import {
@@ -19,9 +20,14 @@ import {
   RiTailwindCssFill,
   RiSupabaseLine,
   RiWindowsFill,
+  RiJavascriptFill,
+  RiNextjsFill,
+  RiMoreLine,
 } from "react-icons/ri";
 import { MdDataObject, MdOutlineSdStorage } from "react-icons/md";
 import { SiOpenai } from "react-icons/si";
+import { BiLogoTypescript, BiLogoPostgresql } from "react-icons/bi";
+import { TbBrandReactNative, TbBrandRedux } from "react-icons/tb";
 
 export const IMAGE_PLACEHOLDER =
   "https://plus.unsplash.com/premium_photo-1661963212517-830bbb7d76fc?q=80&w=1086&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D";
@@ -29,13 +35,27 @@ export const IMAGE_PLACEHOLDER =
 export const LINKEDIN_URL = "https://www.linkedin.com/in/jnmendza/";
 export const GITHUB_URL = "https://github.com/Jnmendza";
 
+export const SKILLS_ICONS = [
+  { Icon: BiLogoTypescript, name: "TypeScript" },
+  { Icon: FaReact, name: "React" },
+  { Icon: RiJavascriptFill, name: "JavaScript" },
+  { Icon: RiNextjsFill, name: "Next.js" },
+  { Icon: TbBrandReactNative, name: "React Native" },
+  { Icon: TbBrandRedux, name: "Redux" },
+  { Icon: RiTailwindCssFill, name: "Tailwind CSS" },
+  { Icon: SiMysql, name: "MySQL" },
+  { Icon: BiLogoPostgresql, name: "PostgreSQL" },
+  { Icon: SiPrisma, name: "Prisma" },
+  { Icon: RiMoreLine, name: "and still learning..." },
+];
+
 export const PROJECTS: Project[] = [
   // =================================================================
   // Project 1: Early Doors
   // =================================================================
   {
     imageUrl:
-      "https://qtmkwwvomuvavuoaqjcn.supabase.co/storage/v1/object/public/ed-public/portfolio/ed-ss.png",
+      "https://qtmkwwvomuvavuoaqjcn.supabase.co/storage/v1/object/public/portfolio/main/ed-ss.png",
     slug: "early-doors",
     title: "Early Doors",
     subTitle: "A Hub for San Diego's Football Supporters",
@@ -215,7 +235,7 @@ export const PROJECTS: Project[] = [
   // =================================================================
   {
     imageUrl:
-      "https://qtmkwwvomuvavuoaqjcn.supabase.co/storage/v1/object/public/ed-public/portfolio/cd-mixtape-ss.png",
+      "https://qtmkwwvomuvavuoaqjcn.supabase.co/storage/v1/object/public/portfolio/main/cd-mixtape.png",
     slug: "cd-mixtape",
     title: "CD-Mixtape",
     subTitle: "A Nostalgic Windows 98 Media Experience",
@@ -353,7 +373,7 @@ export const PROJECTS: Project[] = [
   // =================================================================
   {
     imageUrl:
-      "https://qtmkwwvomuvavuoaqjcn.supabase.co/storage/v1/object/public/ed-public/portfolio/aiquiz.png",
+      "https://qtmkwwvomuvavuoaqjcn.supabase.co/storage/v1/object/public/portfolio/main/aiquiz.png",
     slug: "ai-quiz-generator",
     title: "AI Quiz Generator",
     subTitle: "Transform PDFs into personalized quizzes with AI",
@@ -491,11 +511,149 @@ export const PROJECTS: Project[] = [
     ],
   },
   // =================================================================
-  // Project 4: Portfolio Website
+  // Project 4: AI-Powered Policy Summarizer
   // =================================================================
   {
     imageUrl:
-      "https://qtmkwwvomuvavuoaqjcn.supabase.co/storage/v1/object/public/ed-public/portfolio/portfolio.png",
+      "https://qtmkwwvomuvavuoaqjcn.supabase.co/storage/v1/object/public/portfolio/main/policy.png",
+    slug: "my-policy",
+    title: "My Policy",
+    subTitle: "Understand any privacy policy before you click 'Accept'",
+    description:
+      "My Policy uses AI to summarize privacy policies so users can make informed decisions before agreeing to terms. Upload a PDF or paste text to see key takeaways, flagged concerns, and what data you're giving up.",
+    projectLink: "https://my-policy-seven.vercel.app/",
+    githubLink: "https://github.com/Jnmendza/my-policy",
+    projectSummary:
+      "My Policy is an AI-powered web app designed to help users understand complex privacy policies in seconds. By either uploading a PDF or pasting the full policy text, users receive a categorized summary outlining what data is collected, how it's used, who it's shared with, and potential red flags. Emojis give quick insight into which parts are safe, questionable, or concerning. Ideal for anyone who wants to make smarter digital choices without reading through pages of legalese.",
+    techStackDetailed: [
+      {
+        category: "Framework",
+        technologies: "Next.js 14 (App Router)",
+        icons: [RiNextjsLine],
+      },
+      {
+        category: "Language",
+        technologies: "TypeScript",
+        icons: [SiTypescript],
+      },
+      {
+        category: "Styling",
+        technologies: "Tailwind CSS, Shadcn/UI",
+        icons: [RiTailwindCssFill, SiShadcnui],
+      },
+      {
+        category: "PDF Parsing",
+        technologies: "pdf-parse",
+        icons: [],
+      },
+      {
+        category: "API Integration",
+        technologies: "OpenAI GPT-4o",
+        icons: [SiOpenai],
+      },
+      {
+        category: "State Mngmt",
+        technologies: "React Hooks, sessionStorage",
+        icons: [],
+      },
+      {
+        category: "Deployment",
+        technologies: "Vercel, GitHub",
+        icons: [SiVercel, FaGithub],
+      },
+    ],
+    features: [
+      {
+        featureTitle: "PDF & Text Input Modes",
+        featurePoints: [
+          {
+            desc: "Users can upload a privacy policy in PDF form or paste raw text directly into a textarea.",
+          },
+          {
+            desc: "Once a PDF is uploaded, text input is disabled to avoid duplication.",
+          },
+          {
+            desc: "Users can also clear the uploaded file or text input and switch methods at any time.",
+          },
+        ],
+      },
+      {
+        featureTitle: "AI-Powered Summary",
+        featurePoints: [
+          {
+            desc: "OpenAI GPT-4o breaks down policies into 5 categories: Personal Data Collected, How Data Is Used, Who Data Is Shared With, Tracking & Analytics, and Red Flags.",
+          },
+          {
+            desc: "Uses emoji indicators to highlight safe (🟢), caution (🟡), and dangerous (🔴) sections.",
+          },
+        ],
+      },
+      {
+        featureTitle: "Minimal UI with Feedback",
+        featurePoints: [
+          {
+            desc: "Responsive UI with dark mode toggle for accessibility.",
+          },
+          {
+            desc: "Live character count and file upload name display for input validation.",
+          },
+          {
+            desc: "Progress bar and toast notifications for user feedback during generation.",
+          },
+        ],
+      },
+    ],
+    content: [
+      {
+        title: "Purpose & Use Case",
+        blocks: [
+          {
+            type: "paragraph",
+            text: "Most users blindly agree to privacy policies without understanding what they're giving up. My Policy helps people slow down and make better-informed decisions by summarizing what data is collected and how it's handled.",
+          },
+          {
+            type: "paragraph",
+            text: "The app was inspired by real-world experiences of clicking 'accept' on policies without fully reading them. With increasing concerns around data privacy, this tool empowers users to take control by simplifying the fine print into something they can actually understand.",
+          },
+        ],
+      },
+      {
+        title: "Development Notes",
+        blocks: [
+          {
+            type: "list",
+            items: [
+              "Used pdf-parse to convert uploaded PDF files to raw text for analysis.",
+              "Crafted a structured AI prompt to enforce Markdown output with clear categories and emoji markers.",
+              "Saved summary results in sessionStorage to persist across reloads.",
+              "Handled edge cases like missing input, invalid files, or malformed AI responses with try/catch and alerts.",
+              "Styled the UI with Tailwind and shadcn/ui, maintaining clean form layouts with responsive spacing and feedback.",
+            ],
+          },
+        ],
+      },
+      {
+        title: "Challenges & Learnings",
+        blocks: [
+          {
+            type: "list",
+            items: [
+              "AI output in Markdown can break layout if not properly stripped. Added regex filtering to clean results before display.",
+              "Managing dual input modes (PDF vs. text) required clear UX boundaries and conditional validation.",
+              "Deploying with pdf-parse in Next.js 14 involved customizing server settings via `serverExternalPackages` to avoid build issues.",
+            ],
+          },
+        ],
+      },
+    ],
+  },
+
+  // =================================================================
+  // Project 5: Portfolio Website
+  // =================================================================
+  {
+    imageUrl:
+      "https://qtmkwwvomuvavuoaqjcn.supabase.co/storage/v1/object/public/portfolio/main/portfolio.png",
     slug: "portfolio-website",
     title: "Personal Portfolio",
     subTitle: "Modern Developer Portfolio",

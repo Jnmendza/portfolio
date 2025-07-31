@@ -1,8 +1,13 @@
-import { IMAGE_PLACEHOLDER } from "@/constants";
+import {
+  GITHUB_URL,
+  IMAGE_PLACEHOLDER,
+  LINKEDIN_URL,
+  SKILLS_ICONS,
+} from "@/constants";
 import Image from "next/image";
 import React from "react";
 import { HiDocumentDownload } from "react-icons/hi";
-import { FaGithub, FaLink, FaFigma, FaReact } from "react-icons/fa";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
 import TitleBanner from "@/components/TitleBanner";
 import ContactBtn from "@/components/ContactBtn";
 import Link from "next/link";
@@ -51,7 +56,7 @@ const AboutPage = () => {
           </p>
           <div className='flex items-center mt-4 p-2 space-x-2'>
             <Link
-              href='https://qtmkwwvomuvavuoaqjcn.supabase.co/storage/v1/object/public/ed-public/portfolio/jm-0625.pdf'
+              href='https://qtmkwwvomuvavuoaqjcn.supabase.co/storage/v1/object/public/portfolio/main/J.Mendoza-resume.pdf'
               target='_blank'
               rel='noopener noreferrer'
               className='flex cursor-pointer items-center border-2 border-primary border-solid rounded-lg px-4 py-2 text-primary hover:bg-primary hover:text-blackBlue transition-colors'
@@ -68,25 +73,24 @@ const AboutPage = () => {
         <div className='flex flex-col bg-blackBlue col-span-2 p-4 md:p-6 rounded-lg'>
           <h1 className='font-bold text-xl md:text-2xl mb-2 md:mb-4'>Skills</h1>
           <div className='flex flex-wrap justify-between gap-3 md:gap-4 text-3xl md:text-4xl'>
-            {[
-              FaGithub,
-              FaLink,
-              FaFigma,
-              FaReact,
-              FaGithub,
-              FaLink,
-              FaFigma,
-              FaReact,
-            ].map((Icon, index) => (
-              <Icon key={index} className='flex-shrink-0' />
+            {SKILLS_ICONS.map(({ Icon, name }, index) => (
+              <div key={index} className='relative group'>
+                <Icon className='flex-shrink-0' />
+                <span className='absolute -top-8 left-1/2 -translate-x-1/2 whitespace-nowrap bg-gray-800 text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition pointer-events-none'>
+                  {name}
+                </span>
+              </div>
             ))}
           </div>
         </div>
         <div className='flex items-center justify-center bg-blackBlue p-4 rounded-lg'>
           <div className='flex flex-wrap justify-center gap-3 md:gap-4'>
-            <FaGithub className={iconCss} />
-            <FaLink className={iconCss} />
-            <FaFigma className={iconCss} />
+            <Link href={GITHUB_URL}>
+              <FaGithub className={iconCss} />
+            </Link>
+            <Link href={LINKEDIN_URL}>
+              <FaLinkedin className={iconCss} />
+            </Link>
           </div>
         </div>
       </div>
