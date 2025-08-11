@@ -3,6 +3,7 @@ import "@/styles/globals.css";
 import { bebasFont, nunitoFont } from "@/lib/font.js";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { Toaster } from "sonner";
 
 export const metadata: Metadata = {
   title: "Jonathan Mendoza",
@@ -22,7 +23,7 @@ export default function RootLayout({
         <Navbar />
         {/* Main content fills space */}
         <main className='flex-grow'>{children}</main>
-
+        <Toaster richColors position='bottom-right' />
         {/* Footer sticks to bottom */}
         <Footer />
       </body>

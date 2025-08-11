@@ -1,7 +1,9 @@
 "use client";
+
 import React, { useState } from "react";
 import TitleBanner from "@/components/TitleBanner";
 import { bebasFont } from "@/lib/font";
+import { toast } from "sonner";
 
 const ContactPage = () => {
   const [name, setName] = useState<string>("");
@@ -11,13 +13,6 @@ const ContactPage = () => {
     "idle" | "sending" | "success" | "error"
   >("idle");
 
-  console.log("TEXT", {
-    name,
-    email,
-    message,
-  });
-  const [errorMsg, setErrorMsg] = useState<string | null>(null);
-
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (!name || !email || !message) {
@@ -25,36 +20,39 @@ const ContactPage = () => {
     }
 
     setStatus("sending");
-    setErrorMsg(null);
 
     try {
-      const res = await fetch("/api/email", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ name, email, message }),
-      });
+      await toast.promise(
+        (async () => {
+          const res = await fetch("/api/email", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ name, email, message }),
+          });
 
-      if (!res.ok) {
-        // If NextResponse.json({ error }, { status: 500 }) is returned from the handler
-        const errorData = await res.json();
-        throw new Error(
-          errorData.error || "Something went wrong when sending the email"
-        );
-      }
+          if (!res.ok) {
+            const errorData = await res.json().catch(() => ({}));
+            throw new Error(
+              errorData.error || "Something went wrong when sending the email"
+            );
+          }
+        })(),
+        {
+          loading: "Sending…",
+          success: "Message sent! Check your email for confirmation.",
+          error: (e) =>
+            e instanceof Error ? e.message : "Failed to send message",
+        }
+      );
 
       setStatus("success");
       setName("");
       setEmail("");
       setMessage("");
     } catch (error) {
+      console.error(error);
       setStatus("error");
-      if (error instanceof Error) {
-        setErrorMsg(error.message || "Error submitting form");
-      } else {
-        setErrorMsg("Error submitting form");
-      }
+      // Errors are already shown via toast, so no need for inline state
     }
   };
 
@@ -63,10 +61,10 @@ const ContactPage = () => {
       <TitleBanner title='Contact' />
       <div className='grid grid-cols-1 lg:grid-cols-2 bg-primary p-6 rounded-lg'>
         <div className='text-blackBlue'>
-          <h1 className={`${bebasFont.className}  text-6xl`}>Get in touch</h1>
-          <p className=' w-full lg:w-[200px] text-sm'>
+          <h1 className={`${bebasFont.className} text-6xl`}>Get in touch</h1>
+          <p className='w-full lg:w-[200px] text-sm'>
             If you are interested in my work or want to provide feedback about
-            this website, I am open to exchanging ideas .
+            this website, I am open to exchanging ideas.
           </p>
         </div>
 
@@ -85,7 +83,7 @@ const ContactPage = () => {
                   id='name'
                   name='name'
                   value={name}
-                  className='mt-1 block h-8 text-blackBlue p-4 bg-white w-full rounded-md border-black-300 shadow-sm focus:border-blackBlue focus:ring-blackBlue sm:text-sm'
+                  className='mt-1 block h-8 text-blackBlue p-4 bg-white w-full rounded-md shadow-sm focus:border-blackBlue focus:ring-blackBlue sm:text-sm'
                   required
                   onChange={(e) => setName(e.target.value)}
                 />
@@ -102,7 +100,7 @@ const ContactPage = () => {
                   id='email'
                   name='email'
                   value={email}
-                  className='mt-1 block text-blackBlue p-4 h-8 bg-white w-full rounded-md border-black-300 shadow-sm focus:border-blackBlue focus:ring-blackBlue sm:text-sm'
+                  className='mt-1 block text-blackBlue p-4 h-8 bg-white w-full rounded-md shadow-sm focus:border-blackBlue focus:ring-blackBlue sm:text-sm'
                   required
                   onChange={(e) => setEmail(e.target.value)}
                 />
@@ -119,7 +117,7 @@ const ContactPage = () => {
                   name='message'
                   value={message}
                   rows={4}
-                  className='mt-1 block bg-white text-blackBlue w-full min-h-[250px] p-4 rounded-md border-black-300 shadow-sm focus:border-blackBlue focus:ring-blackBlue sm:text-sm'
+                  className='mt-1 block bg-white text-blackBlue w-full min-h-[250px] p-4 rounded-md shadow-sm focus:border-blackBlue focus:ring-blackBlue sm:text-sm'
                   required
                   onChange={(e) => setMessage(e.target.value)}
                 ></textarea>
@@ -127,17 +125,10 @@ const ContactPage = () => {
               <button
                 type='submit'
                 className='bg-blackBlue w-full rounded-lg p-2 cursor-pointer transform transition-transform duration-200 hover:scale-105'
+                disabled={status === "sending" || !name || !email || !message}
               >
                 {status === "sending" ? "Sending..." : "Send"}
               </button>
-              {status === "success" && (
-                <p className='mt-2 text-green-600'>
-                  Message sent! Check your email for confirmation.
-                </p>
-              )}
-              {status === "error" && (
-                <p className='mt-2 text-red-600'>{errorMsg}</p>
-              )}
             </div>
           </form>
         </div>

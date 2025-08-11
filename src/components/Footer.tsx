@@ -1,6 +1,6 @@
 import { bebasFont } from "@/lib/font";
 import React from "react";
-import Logo from "./Logo";
+import { Logo } from "./Logo";
 
 const Footer = () => {
   return (
