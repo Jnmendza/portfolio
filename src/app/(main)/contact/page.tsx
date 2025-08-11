@@ -1,22 +1,75 @@
+"use client";
+
+import React, { useState } from "react";
 import TitleBanner from "@/components/TitleBanner";
 import { bebasFont } from "@/lib/font";
-import React from "react";
+import { toast } from "sonner";
 
 const ContactPage = () => {
+  const [name, setName] = useState<string>("");
+  const [email, setEmail] = useState<string>("");
+  const [message, setMessage] = useState<string>("");
+  const [status, setStatus] = useState<
+    "idle" | "sending" | "success" | "error"
+  >("idle");
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    if (!name || !email || !message) {
+      return;
+    }
+
+    setStatus("sending");
+
+    try {
+      await toast.promise(
+        (async () => {
+          const res = await fetch("/api/email", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ name, email, message }),
+          });
+
+          if (!res.ok) {
+            const errorData = await res.json().catch(() => ({}));
+            throw new Error(
+              errorData.error || "Something went wrong when sending the email"
+            );
+          }
+        })(),
+        {
+          loading: "Sending…",
+          success: "Message sent! Check your email for confirmation.",
+          error: (e) =>
+            e instanceof Error ? e.message : "Failed to send message",
+        }
+      );
+
+      setStatus("success");
+      setName("");
+      setEmail("");
+      setMessage("");
+    } catch (error) {
+      console.error(error);
+      setStatus("error");
+      // Errors are already shown via toast, so no need for inline state
+    }
+  };
+
   return (
     <div className='px-6 mt-4 space-y-4'>
       <TitleBanner title='Contact' />
       <div className='grid grid-cols-1 lg:grid-cols-2 bg-primary p-6 rounded-lg'>
         <div className='text-blackBlue'>
-          <h1 className={`${bebasFont.className}  text-6xl`}>Get in touch</h1>
-          <p className=' w-full lg:w-[200px] text-sm'>
+          <h1 className={`${bebasFont.className} text-6xl`}>Get in touch</h1>
+          <p className='w-full lg:w-[200px] text-sm'>
             If you are interested in my work or want to provide feedback about
-            this website, I am open to exchanging ideas .
+            this website, I am open to exchanging ideas.
           </p>
         </div>
 
         <div className='mt-4 lg:mt-0'>
-          <form action='submit'>
+          <form onSubmit={handleSubmit}>
             <div className='space-y-4'>
               <div>
                 <label
@@ -29,8 +82,10 @@ const ContactPage = () => {
                   type='text'
                   id='name'
                   name='name'
-                  className='mt-1 block h-8 text-blackBlue p-4 bg-white w-full rounded-md border-black-300 shadow-sm focus:border-blackBlue focus:ring-blackBlue sm:text-sm'
+                  value={name}
+                  className='mt-1 block h-8 text-blackBlue p-4 bg-white w-full rounded-md shadow-sm focus:border-blackBlue focus:ring-blackBlue sm:text-sm'
                   required
+                  onChange={(e) => setName(e.target.value)}
                 />
               </div>
               <div>
@@ -44,8 +99,10 @@ const ContactPage = () => {
                   type='email'
                   id='email'
                   name='email'
-                  className='mt-1 block text-blackBlue p-4 h-8 bg-white w-full rounded-md border-black-300 shadow-sm focus:border-blackBlue focus:ring-blackBlue sm:text-sm'
+                  value={email}
+                  className='mt-1 block text-blackBlue p-4 h-8 bg-white w-full rounded-md shadow-sm focus:border-blackBlue focus:ring-blackBlue sm:text-sm'
                   required
+                  onChange={(e) => setEmail(e.target.value)}
                 />
               </div>
               <div>
@@ -58,16 +115,19 @@ const ContactPage = () => {
                 <textarea
                   id='message'
                   name='message'
+                  value={message}
                   rows={4}
-                  className='mt-1 block bg-white text-blackBlue w-full min-h-[250px] p-4 rounded-md border-black-300 shadow-sm focus:border-blackBlue focus:ring-blackBlue sm:text-sm'
+                  className='mt-1 block bg-white text-blackBlue w-full min-h-[250px] p-4 rounded-md shadow-sm focus:border-blackBlue focus:ring-blackBlue sm:text-sm'
                   required
+                  onChange={(e) => setMessage(e.target.value)}
                 ></textarea>
               </div>
               <button
                 type='submit'
-                className='bg-blackBlue w-full rounded-lg p-2 cursor-pointer transform transition-transform duration-200 hover:scale-110'
+                className='bg-blackBlue w-full rounded-lg p-2 cursor-pointer transform transition-transform duration-200 hover:scale-105'
+                disabled={status === "sending" || !name || !email || !message}
               >
-                Send
+                {status === "sending" ? "Sending..." : "Send"}
               </button>
             </div>
           </form>
