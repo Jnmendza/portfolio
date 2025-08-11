@@ -14,7 +14,7 @@ async function sendEmail(options: {
 }) {
   // Note: `from` can default to verified address if omitted
   const payload = {
-    from: options.from ?? "noreply@jonathanmendoza.dev",
+    from: options.from ?? "contact@jonathanmendoza.dev",
     to: options.to,
     subject: options.subject,
     react: options.react,
