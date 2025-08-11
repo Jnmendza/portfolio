@@ -108,7 +108,7 @@ function FooterIcons() {
             <td align='center' style={{ padding: "0 8px" }}>
               <Link href='https://github.com/Jnmendza'>
                 <Img
-                  src='https://qtmkwwvomuvavuoaqjcn.supabase.co/storage/v1/object/public/portfolio/main/github.png'
+                  src='https://jonathanmendoza.dev/assets/github.png'
                   width={24}
                   height={24}
                   alt='GitHub'
@@ -119,7 +119,7 @@ function FooterIcons() {
             <td align='center' style={{ padding: "0 8px" }}>
               <Link href='https://www.linkedin.com/in/jnmendza/'>
                 <Img
-                  src='https://qtmkwwvomuvavuoaqjcn.supabase.co/storage/v1/object/public/portfolio/main/linkedin.png'
+                  src='https://jonathanmendoza.dev/assets/linkedin.png'
                   width={24}
                   height={24}
                   alt='LinkedIn'
