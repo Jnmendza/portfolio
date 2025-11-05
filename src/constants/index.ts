@@ -24,7 +24,7 @@ import {
   RiNextjsFill,
   RiMoreLine,
 } from "react-icons/ri";
-import { MdDataObject, MdOutlineSdStorage } from "react-icons/md";
+import { MdDataObject, MdOutlineSdStorage, MdAnimation } from "react-icons/md";
 import { SiOpenai } from "react-icons/si";
 import { BiLogoTypescript, BiLogoPostgresql } from "react-icons/bi";
 import { TbBrandReactNative, TbBrandRedux } from "react-icons/tb";
@@ -231,7 +231,179 @@ export const PROJECTS: Project[] = [
     ],
   },
   // =================================================================
-  // Project 2: CD-Mixtape
+  // Project 2: Oaxaca DDLM 2023
+  // =================================================================
+  {
+    imageUrl:
+      "https://qtmkwwvomuvavuoaqjcn.supabase.co/storage/v1/object/public/portfolio/main/ox.png",
+    slug: "dia-de-los-muertos-oaxaca-2023",
+    title: "Dia de los Muertos — Oaxaca 2023",
+    subTitle: "Photography-forward interactive web experience",
+    description:
+      "An immersive, motion-rich photo story from my 2023 trip to Oaxaca. Built to honor the color, ritual, and humanity of Día de los Muertos with performance-minded engineering and a photography-first UI.",
+    projectLink: "https://ddlm.vercel.app/en",
+    githubLink: "https://github.com/Jnmendza/ddlm",
+    projectSummary:
+      "Dia de los Muertos — Oaxaca 2023 is a custom Next.js (App Router) site that blends documentary photography with subtle motion design. Sections move from street life to candlelit cemetery vigils, with papel-picado overlays, and scroll-timed scenes. High-res assets live in Supabase Storage and are optimized through Next/Image with explicit sizes and responsive breakpoints. Under the hood, transform-only animations, debounced listeners, and careful layout primitives keep the experience smooth despite heavy media.",
+    techStackDetailed: [
+      {
+        category: "Framework",
+        technologies: "Next.js (App Router), TypeScript",
+        icons: [RiNextjsLine, BiLogoTypescript],
+      },
+      {
+        category: "Styling",
+        technologies: "Tailwind CSS",
+        icons: [RiTailwindCssFill],
+      },
+      {
+        category: "Animations",
+        technologies: "GSAP, ScrollTrigger",
+        icons: [MdAnimation],
+      },
+      {
+        category: "Media/Hosting",
+        technologies: "Supabase Storage",
+        icons: [RiSupabaseLine],
+      },
+    ],
+    features: [
+      {
+        featureTitle: "Immersive Hero & Motion",
+        featurePoints: [
+          {
+            desc: "Layered video/imagery with papel-picado overlays and gentle parallax.",
+          },
+          {
+            desc: "Scene-scoped GSAP timelines that guide attention without overpowering the photography.",
+          },
+        ],
+      },
+      {
+        featureTitle: "Photography-First Layouts",
+        featurePoints: [
+          {
+            desc: "Edge-to-edge grids with controlled whitespace and typographic rhythm.",
+          },
+          {
+            desc: "Color palette echoing the holiday: marigold (#ffb300), crimson (#a50044), indigo (#2a2d74).",
+          },
+        ],
+      },
+      {
+        featureTitle: "Performance Care",
+        featurePoints: [
+          {
+            desc: "Transform-only animations (translate3d, will-change) to keep jank low.",
+          },
+          {
+            desc: "Explicit image dimensions and stable aspect boxes to prevent CLS.",
+          },
+          {
+            desc: "Debounced scroll listeners and route-level code splitting.",
+          },
+        ],
+      },
+      {
+        featureTitle: "Structured Storytelling",
+        featurePoints: [
+          {
+            desc: "Themed sections for Locals & Face Paint, Street Processions, Markets & Altars, and Cemeteries.",
+          },
+          {
+            desc: "Copy and pacing encourage lingering and contemplation over quick scrolling.",
+          },
+        ],
+      },
+    ],
+    content: [
+      {
+        title: "Overview",
+        blocks: [
+          {
+            type: "paragraph",
+            text: "This project captures Oaxaca’s Día de los Muertos through portraits, street scenes, and nocturnal ceremonies. The goal was to let the images breathe while adding just enough motion to guide the eye and honor the festival’s energy.",
+          },
+          {
+            type: "paragraph",
+            text: "A restrained, performance-minded animation system supports the photography: no heavy effects, just scene-scoped GSAP timelines and transform-only parallax.",
+          },
+        ],
+      },
+      {
+        title: "Technical Architecture",
+        blocks: [
+          {
+            type: "list",
+            items: [
+              "Next.js App Router + TypeScript for typed, modular page composition.",
+              "Tailwind for consistent spacing and responsive utilities.",
+              "GSAP + ScrollTrigger for timeline-based, scroll-driven animation.",
+              "Supabase Storage + Next/Image for optimized, responsive media.",
+              "Netlify for CI/CD and global caching.",
+            ],
+          },
+        ],
+      },
+      {
+        title: "Key Components",
+        blocks: [
+          {
+            type: "paragraph",
+            text: "The hero stacks imagery and papel-picado overlays with subtle depth. Section templates standardize typography, grids, and captions across themes.",
+          },
+        ],
+      },
+      {
+        title: "Performance Strategy",
+        blocks: [
+          {
+            type: "list",
+            items: [
+              "Explicit image dimensions and stable aspect boxes to avoid layout shift.",
+              "LQIP placeholders and responsive srcsets via Next/Image.",
+              "Debounced scroll listeners; timelines paused when off-screen.",
+              "Hardware-accelerated transforms (translate3d, will-change).",
+            ],
+          },
+        ],
+      },
+      {
+        title: "Challenges & Solutions",
+        blocks: [
+          {
+            type: "paragraph",
+            text: "Heavy media risked jank and hydration drift. Standardizing container ratios, precomputing image sizes, and isolating animations per section kept the UI stable and silky.",
+          },
+        ],
+      },
+      {
+        title: "Roadmap",
+        blocks: [
+          {
+            type: "list",
+            items: [
+              "Toggle for EXIF/camera details per photo.",
+              "Keyboard navigation and slideshow mode.",
+              "Optional captions from a lightweight CMS.",
+              "Export a curated PDF lookbook.",
+            ],
+          },
+        ],
+      },
+      {
+        title: "Locals & Face Paint",
+        blocks: [
+          {
+            type: "paragraph",
+            text: "A portrait series focused on the people of Oaxaca—calavera makeup, handmade costumes, and the quiet pride behind each gaze. The copy and pacing invite viewers to linger rather than scroll.",
+          },
+        ],
+      },
+    ],
+  },
+  // =================================================================
+  // Project 3: CD-Mixtape
   // =================================================================
   {
     imageUrl:
@@ -369,7 +541,7 @@ export const PROJECTS: Project[] = [
     ],
   },
   // =================================================================
-  // Project 3: AI-Powered Quiz App
+  // Project 4: AI-Powered Quiz App
   // =================================================================
   {
     imageUrl:
@@ -511,7 +683,7 @@ export const PROJECTS: Project[] = [
     ],
   },
   // =================================================================
-  // Project 4: AI-Powered Policy Summarizer
+  // Project 5: AI-Powered Policy Summarizer
   // =================================================================
   {
     imageUrl:
@@ -649,7 +821,7 @@ export const PROJECTS: Project[] = [
   },
 
   // =================================================================
-  // Project 5: Portfolio Website
+  // Project 6: Portfolio Website
   // =================================================================
   {
     imageUrl:
