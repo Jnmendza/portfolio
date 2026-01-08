@@ -1,5 +1,11 @@
 import { Project } from "@/types";
-import { FaGithub, FaReact, FaYoutube } from "react-icons/fa";
+import {
+  FaDatabase,
+  FaGithub,
+  FaGlobeAmericas,
+  FaReact,
+  FaYoutube,
+} from "react-icons/fa";
 import {
   SiTypescript,
   SiShadcnui,
@@ -13,6 +19,12 @@ import {
   SiFramer,
   SiCss3,
   SiMysql,
+  SiStripe,
+  SiPostgresql,
+  SiSupabase,
+  SiTailwindcss,
+  SiReact,
+  SiNextdotjs,
 } from "react-icons/si";
 import { IoBarChartSharp } from "react-icons/io5";
 import {
@@ -51,7 +63,140 @@ export const SKILLS_ICONS = [
 
 export const PROJECTS: Project[] = [
   // =================================================================
-  // Project 1: Early Doors
+  // Project 1: Penya Blaugrana San Diego Website
+  // =================================================================
+  {
+    imageUrl:
+      "https://qtmkwwvomuvavuoaqjcn.supabase.co/storage/v1/object/public/portfolio/main/penya.png",
+    slug: "penya-blaugrana-sandiego",
+    title: "Penya Blaugrana San Diego",
+    subTitle: "Official Supporters Group Platform",
+    description:
+      "A full-stack, multilingual platform managing the official FC Barcelona supporters group of San Diego. Features a time-aware match scheduler, a custom membership engine with historical tracking, and a secure admin portal.",
+    projectLink: "https://www.penyasd.com",
+    githubLink: "https://github.com/jnmendza/penya-sd",
+    projectSummary:
+      "This project serves as the digital headquarters for Penya Blaugrana San Diego (Official Penya #2309). It solves the complex logistics of managing a non-profit supporters group by automating match schedules, handling seasonal membership renewals without data duplication, and providing a fully localized experience (EN/ES/CA) for a diverse community.",
+
+    techStackDetailed: [
+      {
+        category: "Frontend & Framework",
+        technologies:
+          "Next.js 15 (App Router), React, TypeScript, Tailwind CSS",
+        icons: [SiNextdotjs, SiReact, SiTypescript, SiTailwindcss],
+      },
+      {
+        category: "Backend & Data",
+        technologies:
+          "Supabase (PostgreSQL), SQL Functions, External Sports API",
+        icons: [SiSupabase, SiPostgresql, FaDatabase],
+      },
+      {
+        category: "Internationalization",
+        technologies: "next-intl, Middleware routing",
+        icons: [FaGlobeAmericas],
+      },
+      {
+        category: "Integrations",
+        technologies: "Stripe Payments, Framer Motion",
+        icons: [SiStripe, SiFramer],
+      },
+    ],
+
+    features: [
+      {
+        featureTitle: "Dynamic Match Scheduler",
+        featurePoints: [
+          {
+            desc: "Automated sync fetches fixtures via external API, reducing manual entry.",
+          },
+          {
+            desc: "Time-aware 'Smart Display' automatically promotes the next upcoming match.",
+          },
+          {
+            desc: "Location logic distinguishes between Home (Barcelona) and Away context.",
+          },
+        ],
+      },
+      {
+        featureTitle: "Membership Engine",
+        featurePoints: [
+          {
+            desc: "Custom SQL upsert logic handles new vs. returning veterans to prevent duplicates.",
+          },
+          {
+            desc: "Uses PostgreSQL text[] arrays to track historical 'seasons_active' (e.g., ['24/25', '25/26']).",
+          },
+          {
+            desc: "Conflict resolution allows profile updates (phone/name) during renewals.",
+          },
+        ],
+      },
+      {
+        featureTitle: "Admin Dashboard",
+        featurePoints: [
+          {
+            desc: "Role-based access control via Supabase Auth for board members.",
+          },
+          {
+            desc: "Global config controls to toggle membership enrollment windows.",
+          },
+          {
+            desc: "Match control system to designate specific fixtures as 'Official Watch Parties'.",
+          },
+        ],
+      },
+      {
+        featureTitle: "Venue & Community",
+        featurePoints: [
+          {
+            desc: "Interactive Google Maps integration for the Otay Ranch headquarters.",
+          },
+          {
+            desc: "Responsive Bento Grid gallery showcasing the atmosphere and tech.",
+          },
+          {
+            desc: "Digital 'Chants' songbook replacing physical paper sheets.",
+          },
+        ],
+      },
+    ],
+
+    content: [
+      {
+        title: "The Challenge",
+        blocks: [
+          {
+            type: "paragraph",
+            text: "The organization needed a way to manage recurring seasonality without creating duplicate records for returning members. Additionally, match schedules change frequently, and manually updating the homepage was prone to error.",
+          },
+        ],
+      },
+      {
+        title: "The Solution",
+        blocks: [
+          {
+            type: "paragraph",
+            text: "I engineered a 'NextMatch' component that acts as the site's heartbeat. It interfaces with an external sports API to fetch the season schedule and uses client-side time logic to automatically rotate the hero banner to the immediately upcoming fixture.",
+          },
+          {
+            type: "paragraph",
+            text: "For the membership system, I moved beyond simple CRUD. I implemented a 'Smart Upsert' strategy in PostgreSQL. Using a text array column (`seasons_active`), the system tracks a member's entire history in a single row, simply appending the new season upon renewal while preserving their original join date.",
+          },
+          {
+            type: "list",
+            items: [
+              "Full localization (i18n) for English, Spanish, and Catalan users.",
+              "Bento Grid gallery layout for a modern, responsive visual experience.",
+              "Secure Admin portal for toggling 'Watch Party' status on specific matches.",
+            ],
+          },
+        ],
+      },
+    ],
+  },
+  // =================================================================
+  // Project 2: Early Doors
   // =================================================================
   {
     imageUrl:
@@ -231,7 +376,7 @@ export const PROJECTS: Project[] = [
     ],
   },
   // =================================================================
-  // Project 2: Oaxaca DDLM 2023
+  // Project 3: Oaxaca DDLM 2023
   // =================================================================
   {
     imageUrl:
@@ -403,7 +548,7 @@ export const PROJECTS: Project[] = [
     ],
   },
   // =================================================================
-  // Project 3: CD-Mixtape
+  // Project 4: CD-Mixtape
   // =================================================================
   {
     imageUrl:
@@ -541,7 +686,7 @@ export const PROJECTS: Project[] = [
     ],
   },
   // =================================================================
-  // Project 4: AI-Powered Quiz App
+  // Project 5: AI-Powered Quiz App
   // =================================================================
   {
     imageUrl:
@@ -683,7 +828,7 @@ export const PROJECTS: Project[] = [
     ],
   },
   // =================================================================
-  // Project 5: AI-Powered Policy Summarizer
+  // Project 6: AI-Powered Policy Summarizer
   // =================================================================
   {
     imageUrl:
@@ -821,7 +966,7 @@ export const PROJECTS: Project[] = [
   },
 
   // =================================================================
-  // Project 6: Portfolio Website
+  // Project 7: Portfolio Website
   // =================================================================
   {
     imageUrl:
