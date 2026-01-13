@@ -25,6 +25,8 @@ import {
   SiTailwindcss,
   SiReact,
   SiNextdotjs,
+  SiFirebase,
+  SiFigma,
 } from "react-icons/si";
 import { IoBarChartSharp } from "react-icons/io5";
 import {
@@ -48,16 +50,23 @@ export const LINKEDIN_URL = "https://www.linkedin.com/in/jnmendza/";
 export const GITHUB_URL = "https://github.com/Jnmendza";
 
 export const SKILLS_ICONS = [
+  // Core
   { Icon: BiLogoTypescript, name: "TypeScript" },
-  { Icon: FaReact, name: "React" },
   { Icon: RiJavascriptFill, name: "JavaScript" },
+  { Icon: FaReact, name: "React" },
   { Icon: RiNextjsFill, name: "Next.js" },
-  { Icon: TbBrandReactNative, name: "React Native" },
-  { Icon: TbBrandRedux, name: "Redux" },
+  // Styles & Mobile
   { Icon: RiTailwindCssFill, name: "Tailwind CSS" },
+  { Icon: TbBrandReactNative, name: "React Native" },
+  // Backend & Data
+  { Icon: TbBrandRedux, name: "Redux" },
+  { Icon: SiSupabase, name: "Supabase" },
+  { Icon: SiFirebase, name: "Firebase" },
   { Icon: SiMysql, name: "MySQL" },
   { Icon: BiLogoPostgresql, name: "PostgreSQL" },
   { Icon: SiPrisma, name: "Prisma" },
+  // Design & Workflow
+  { Icon: SiFigma, name: "Figma" },
   { Icon: RiMoreLine, name: "and still learning..." },
 ];
 
@@ -1085,3 +1094,7 @@ export const PROJECTS: Project[] = [
     ],
   },
 ];
+
+export function getProjectBySlug(slug: string) {
+  return PROJECTS.find((project) => project.slug === slug);
+}

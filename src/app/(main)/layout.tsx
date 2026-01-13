@@ -1,13 +1,10 @@
 import type { Metadata } from "next";
-import "@/styles/globals.css";
-import { bebasFont, nunitoFont } from "@/lib/font.js";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
-import { Toaster } from "sonner";
+import { geistSans, geistMono } from "@/lib/font";
+import "../../styles/globals.css";
 
 export const metadata: Metadata = {
-  title: "Jonathan Mendoza",
-  description: "Jonathan's portfolio",
+  title: "Jonathan Mendoza | Full Stack Developer",
+  description: "Building performant web apps with Next.js and React.",
 };
 
 export default function RootLayout({
@@ -16,16 +13,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang='en'>
+    <html lang='en' className='dark'>
       <body
-        className={`flex min-h-screen flex-col ${bebasFont.className} ${nunitoFont.className} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-slate-950 text-slate-200 selection:bg-indigo-500/30`}
       >
-        <Navbar />
-        {/* Main content fills space */}
-        <main className='flex-grow'>{children}</main>
-        <Toaster richColors position='bottom-right' />
-        {/* Footer sticks to bottom */}
-        <Footer />
+        <div className='mx-auto max-w-6xl px-4 sm:px-6 lg:px-8'>{children}</div>
       </body>
     </html>
   );
