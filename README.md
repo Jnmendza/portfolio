@@ -1,105 +1,39 @@
-# 💼 Jonathan Mendoza – Developer Portfolio
+# Portfolio 2026 | Jonathan Mendoza
 
-A modern, high-performance portfolio built with Next.js 14 and React 19. This site is designed to showcase my projects, skills, and design philosophy through minimal UI, fast load times, dark mode support, and subtle animations. Fully responsive, SEO-optimized, and deployable on Vercel.
+A high-performance, minimalist developer portfolio built with **Next.js 15** and **React 19**.
 
----
+Designed with a "Linear-style" aesthetic, this site focuses on speed, typographic hierarchy, and a content-first approach. It features a responsive **Bento Grid** layout, deep-dive project case studies, and a fully typed architecture.
 
-## 🌟 Features
+![Portfolio Preview](./public/preview.png)
 
-- ⚡ Blazing fast page loads via **Next.js SSG** and **React Server Components**
-- 🌙 System-aware **dark/light mode toggle** with smooth transitions
-- 📱 Fully **responsive** and mobile-first design with Tailwind CSS
-- 🎬 Tasteful page and component animations using Framer Motion
-- 🧠 Built with **React 19**, **TypeScript**, and modern coding practices
+## ⚡️ Tech Stack
+
+- **Framework:** [Next.js 15.3](https://nextjs.org/) (App Router)
+- **Library:** [React 19](https://react.dev/)
+- **Language:** [TypeScript](https://www.typescriptlang.org/)
+- **Styling:** [Tailwind CSS](https://tailwindcss.com/)
+- **Icons:** [Lucide React](https://lucide.dev/) & [React Icons](https://react-icons.github.io/react-icons/)
+- **Fonts:** [Geist Sans](https://vercel.com/font) (Vercel's variable font)
+- **Utilities:** `clsx` & `tailwind-merge` for robust class composition
+
+## ✨ Key Features
+
 - 🚀 Deployed with **GitHub Actions** and hosted on **Vercel**
+- **Bento Grid Layout:** A responsive, masonry-style grid on the homepage that mixes projects, skills, and social links dynamically.
+- **Hybrid Navigation:** Feels like a single-page app but provides deep links (`/projects/[slug]`) for SEO and detailed storytelling.
+- **Data-Driven UI:** All project content, skills, and icons are managed in a single structured data file (`src/data/index.ts`), making updates instant without touching UI code.
+- **Case Study Pages:** Dedicated layouts for projects featuring:
+  - Recursive content rendering (Challenge, Solution, Features).
+  - Sticky sidebar for metadata and links.
+  - Optimized Next/Image handling.
+- **Performance:** - Zero client-side hydration for static content (Server Components).
+  - Optimized font loading.
+  - Perfect Lighthouse scores.
 
----
+## 🚀 Getting Started
 
-## 🧰 Tech Stack
-
-| Category       | Tools / Libraries                 |
-| -------------- | --------------------------------- |
-| **Framework**  | Next.js 15 (App Router), React 19 |
-| **Language**   | TypeScript                        |
-| **Styling**    | Tailwind CSS, Framer Motion       |
-| **Content**    | Local Constants as CMS            |
-| **Deployment** | Vercel, GitHub Actions            |
-
----
-
-## 🚀 Live Demo
-
-🔗 [www.jonathanmendoza.dev](https://www.jonathanmendoza.dev/)  
-🛠️ [GitHub Repo](https://github.com/Jnmendza/portfolio)
-
----
-
-## 📁 Project Structure
-
-```bash
-app/
-├── layout.tsx // Theme provider, shared layout
-├── page.tsx // Home route
-├── projects/ // Dynamic project pages
-├── components/ // Shared UI components (Navbar, Footer, etc.)
-├── lib/ // Utility functions
-├── content/ // Constants and project metadata
-public/
-├── assets/ // Image and media assets
-```
-
----
-
-## 📌 Core Features
-
-### 🔥 Next.js Optimized Performance
-
-- Uses **static site generation (SSG)** for fast page loads and SEO.
-- Implements image optimization via `next/image`.
-- Splits code by route for minimal initial load size.
-
-### 🎨 Responsive & Adaptive Design
-
-- Mobile-first layout with Tailwind breakpoints.
-- Theme toggle supports dark/light with user preference persistence.
-
-### 🛠️ Modern Development Practices
-
-- Built with **React 19** and **TypeScript** for type safety and maintainability.
-- CI/CD with **GitHub Actions** ensures tests and deployments are automated.
-
----
-
-## 🧠 Purpose & Design Philosophy
-
-> A portfolio shouldn’t just show what you’ve built — it should **demonstrate how you build**.
-
-This site was created as both a personal branding platform and a technical showcase. Every UI choice, animation, and architectural decision was made with clarity and performance in mind. The minimal UI puts the spotlight on my work, while modern development practices ensure the site is future-ready.
-
----
-
-## 🛠️ Development Notes
-
-- Smooth animations via **Framer Motion** for transitions and hover states
-- Projects and skills defined as **TypeScript constants** for easy scaling
-- Focused on achieving 100+ scores in Lighthouse across all metrics
-
----
-
-## 💡 Lessons Learned
-
-Building your own portfolio is humbling — you're the designer, the developer, and the stakeholder. This project helped me:
-
-- Learn the **App Router** deeply with real-world use cases
-- Understand the balance between aesthetics and accessibility
-- Practice delivering a polished product with a tight scope
-
----
-
-## 🙌 Acknowledgements
-
-Thanks to the open-source tools and design inspiration from other devs pushing clean, beautiful, performant personal sites.
-
----
-
-🧠 Built with care by [Jonathan Mendoza](https://www.jonathanmendoza.dev)
+1. **Clone the repository:**
+   ```bash
+   git clone [https://github.com/Jnmendza/portfolio.git](https://github.com/Jnmendza/portfolio.git)
+   cd portfolio
+   ```
