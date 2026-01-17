@@ -1,11 +1,11 @@
-import { Bebas_Neue, Nunito } from "next/font/google";
+import { Geist, Geist_Mono } from "next/font/google";
 
-export const bebasFont = Bebas_Neue({
+export const geistSans = Geist({
+  variable: "--font-geist-sans",
   subsets: ["latin"],
-  weight: "400",
 });
 
-export const nunitoFont = Nunito({
+export const geistMono = Geist_Mono({
+  variable: "--font-geist-mono",
   subsets: ["latin"],
-  weight: "400",
 });

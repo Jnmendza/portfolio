@@ -3,10 +3,15 @@ import type { NextConfig } from "next";
 const nextConfig: NextConfig = {
   /* config options here */
   images: {
-    domains: [
-      "plus.unsplash.com",
-      "qtmkwwvomuvavuoaqjcn.supabase.co",
-      "cdn.sanity.io",
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "plus.unsplash.com",
+      },
+      {
+        protocol: "https",
+        hostname: "qtmkwwvomuvavuoaqjcn.supabase.co",
+      },
     ],
   },
 };
