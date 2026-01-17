@@ -16,10 +16,7 @@ export default function Home() {
   const featuredProject1 =
     PROJECTS.find((p) => p.slug === "penya-blaugrana-sandiego") || PROJECTS[0];
   const featuredProject2 =
-    PROJECTS.find((p) => p.slug === "early-doors") || PROJECTS[1];
-  const featuredProject3 =
-    PROJECTS.find((p) => p.slug === "dia-de-los-muertos-oaxaca-2023") ||
-    PROJECTS[2];
+    PROJECTS.find((p) => p.slug === "documind") || PROJECTS[1];
 
   // 2. Define the Layout Matrix
   // This mixes your Dynamic Data (Projects) with Static Data (Stack, Github)
@@ -47,27 +44,12 @@ export default function Home() {
     // --- ROW 2: Small Project + Big Github ---
     {
       title: featuredProject2.title,
-      description: "Interactive map for football watch parties.",
+      description: featuredProject2.subTitle,
       header: <SkeletonImage src={featuredProject2.imageUrl} />,
       className: "md:col-span-1",
       icon: <IconFileBroken className='h-4 w-4 text-neutral-500' />,
       href: `/projects/${featuredProject2.slug}`,
     },
-    {
-      title: "Open Source",
-      description: "Check out my contributions on GitHub.",
-      header: (
-        <div className='flex flex-1 w-full h-full min-h-[6rem] rounded-xl bg-slate-800 border border-slate-700 flex items-center justify-center text-slate-500'>
-          github.com/jnmendza
-        </div>
-      ),
-      className: "md:col-span-2",
-      icon: <IconSignature className='h-4 w-4 text-neutral-500' />,
-      href: "https://github.com/Jnmendza",
-    },
-
-    // --- ROW 3: Small Archive Link + Big Project ---
-    // This is the fix: We put the "Archive" FIRST (span 1), then the Project (span 2)
     {
       title: "Project Archive",
       description: "View all 7+ projects, experiments, and case studies.",
@@ -83,17 +65,9 @@ export default function Home() {
           </div>
         </div>
       ),
-      className: "md:col-span-2", // Fits on the left
+      className: "md:col-span-2",
       icon: <IconClipboardCopy className='h-4 w-4 text-neutral-500' />,
       href: "/projects",
-    },
-    {
-      title: featuredProject3.title,
-      description: featuredProject3.subTitle,
-      header: <SkeletonImage src={featuredProject3.imageUrl} />,
-      className: "md:col-span-1", // Fits on the right
-      icon: <IconTableColumn className='h-4 w-4 text-neutral-500' />,
-      href: `/projects/${featuredProject3.slug}`,
     },
   ];
 

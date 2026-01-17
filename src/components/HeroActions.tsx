@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { Copy, Check, FileDown } from "lucide-react";
-import { FaLinkedin } from "react-icons/fa";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
 
 export const HeroActions = () => {
   const [isCopied, setIsCopied] = useState(false);
@@ -52,6 +52,15 @@ export const HeroActions = () => {
         className='inline-flex items-center cursor-pointer justify-center px-4 py-2.5 rounded-lg bg-slate-800 text-slate-400 hover:text-[#0A66C2] hover:bg-slate-700 transition-all border border-slate-700'
       >
         <FaLinkedin className='w-6 h-6' />
+      </a>
+
+      <a
+        href='https://github.com/jnmendza'
+        target='_blank'
+        rel='noopener noreferrer'
+        className='inline-flex items-center cursor-pointer justify-center px-4 py-2.5 rounded-lg bg-slate-800 text-slate-400 hover:text-[#0A66C2] hover:bg-slate-700 transition-all border border-slate-700'
+      >
+        <FaGithub className='w-6 h-6' />
       </a>
     </div>
   );
