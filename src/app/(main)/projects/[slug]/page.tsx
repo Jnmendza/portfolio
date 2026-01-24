@@ -25,7 +25,7 @@ export default async function ProjectPage({ params }: PageProps) {
       {/* 1. TOP NAV: Back Button */}
       <div className='max-w-6xl mx-auto mb-8'>
         <Link
-          href='/'
+          href='/projects'
           className='inline-flex items-center text-sm text-slate-400 hover:text-indigo-400 transition-colors group'
         >
           <ArrowLeft className='w-4 h-4 mr-2 group-hover:-translate-x-1 transition-transform' />

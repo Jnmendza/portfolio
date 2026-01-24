@@ -14,7 +14,7 @@ export default function Home() {
   // 1. Grab the specific projects you want to feature on the Home Page
   // We use your existing data source.
   const featuredProject1 =
-    PROJECTS.find((p) => p.slug === "penya-blaugrana-sandiego") || PROJECTS[0];
+    PROJECTS.find((p) => p.slug === "union-hub") || PROJECTS[2];
   const featuredProject2 =
     PROJECTS.find((p) => p.slug === "documind") || PROJECTS[1];
 
@@ -83,8 +83,8 @@ export default function Home() {
           the gap between design and performance. I build pixel-perfect,
           scalable web applications with{" "}
           <span className='text-indigo-400'>Next.js, Typescript</span> and{" "}
-          <span className='text-indigo-400'>Tailwind.</span>. Based in
-          Oceanside, CA.
+          <span className='text-indigo-400'>Tailwind</span>. Based in Oceanside,
+          CA.
         </p>
         <HeroActions />
       </section>

@@ -29,6 +29,8 @@ import {
   SiFigma,
   SiRedis,
   SiGooglecloud,
+  SiGooglechrome,
+  SiVite,
 } from "react-icons/si";
 import { IoBarChartSharp } from "react-icons/io5";
 import {
@@ -44,6 +46,7 @@ import { MdDataObject, MdOutlineSdStorage, MdAnimation } from "react-icons/md";
 import { SiOpenai } from "react-icons/si";
 import { BiLogoTypescript, BiLogoPostgresql } from "react-icons/bi";
 import { TbBrandReactNative, TbBrandRedux } from "react-icons/tb";
+import { FaCompactDisc } from "react-icons/fa6";
 
 export const IMAGE_PLACEHOLDER =
   "https://plus.unsplash.com/premium_photo-1661963212517-830bbb7d76fc?q=80&w=1086&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D";
@@ -326,179 +329,236 @@ export const PROJECTS: Project[] = [
     ],
   },
   // =================================================================
-  // Project 3: Early Doors
+  // Project 3: Union Hub
   // =================================================================
   {
     imageUrl:
-      "https://qtmkwwvomuvavuoaqjcn.supabase.co/storage/v1/object/public/portfolio/main/ed-ss.png",
-    slug: "early-doors",
-    title: "Early Doors",
-    subTitle: "A Hub for San Diego's Football Supporters",
+      "https://qtmkwwvomuvavuoaqjcn.supabase.co/storage/v1/object/public/portfolio/main/UH-screenshot.jpeg",
+    slug: "union-hub",
+    title: "Union Hub",
+    subTitle: "The Operating System for Modern Supporters Groups",
     description:
-      "A map-based web app that helps fans in San Diego find venues hosting watch parties for football clubs from around the world. With an admin dashboard for managing events, clubs, and supporter groups, EarlyDoors empowers local fan communities to organize and discover matchday experiences in their city.",
-    projectLink: "https://earlydoors.vercel.app/",
-    githubLink: "https://github.com/Jnmendza/earlydoors",
+      "A multi-tenant PWA designed to centralize communication, resources, and membership verification for football supporters groups.",
+    projectLink: "https://union-hub-flame.vercel.app/login",
+    githubLink: "https://github.com/jnmendza/union-hub",
     projectSummary:
-      "Early Doors is a web application designed to bridge the gap between San Diego's passionate football supporters and the local establishments that broadcast the games. As the city's soccer culture flourishes with the arrival of SDFC, this platform provides a vital service: 'Find your tribe and enjoy watching your club's games with the same passion and support.' The application features an interactive map for users to discover watch party venues and a comprehensive admin dashboard for managing all underlying data, including venues, clubs, supporter groups, and events.",
+      "Supporters groups often rely on a chaotic mix of WhatsApp for chat, Google Drive for files, and spreadsheets for membership. Union Hub unifies these into a secure 'Digital Clubhouse.' It features real-time chat, role-based admin tools, a resource vault, and verifiable digital IDs.",
+
     techStackDetailed: [
       {
-        category: "Framework",
-        technologies: "Next.js 14 (App Router)",
-        icons: [RiNextjsLine],
+        category: "Frontend Core",
+        technologies: "Next.js 14 (App Router), React, TypeScript",
+        icons: [SiNextdotjs, SiReact, SiTypescript],
       },
       {
-        category: "Language",
-        technologies: "TypeScript",
-        icons: [SiTypescript],
+        category: "Styling & UI",
+        technologies: "Tailwind CSS, Lucide React, Shadcn/UI patterns",
+        icons: [SiTailwindcss],
       },
       {
-        category: "Styling",
-        technologies: "Tailwind CSS, Shadcn/UI",
-        icons: [RiTailwindCssFill, SiShadcnui],
+        category: "Backend & Data",
+        technologies:
+          "Firebase Authentication, Cloud Firestore (NoSQL), Firebase Storage",
+        icons: [SiFirebase],
       },
       {
-        category: "State Mngmt",
-        technologies: "Zustand",
-        icons: [MdOutlineSdStorage],
-      },
-      {
-        category: "Form Mngmt",
-        technologies: "React Hook Form with Zod",
-        icons: [SiZod, SiReacthookform],
-      },
-      {
-        category: "Database/Backend",
-        technologies: "Supabase (PostgreSQL), Prisma",
-        icons: [RiSupabaseLine, SiPrisma],
-      },
-      { category: "CMS (Blog)", technologies: "Sanity.io", icons: [SiSanity] },
-      {
-        category: "APIs & Services",
-        technologies: "Google Maps, Distance Matrix, OAuth",
-        icons: [SiGooglemaps],
-      },
-      {
-        category: "Data Viz (Admin)",
-        technologies: "Recharts",
-        icons: [IoBarChartSharp],
-      },
-      {
-        category: "Deployment",
-        technologies: "Vercel, GitHub",
-        icons: [SiVercel, FaGithub],
+        category: "Architecture",
+        technologies: "PWA (Progressive Web App), Multi-Tenant Workspace Model",
       },
     ],
+
     features: [
       {
-        featureTitle: "Interactive Venue Map",
+        featureTitle: "Multi-Tenant Architecture",
         featurePoints: [
           {
-            desc: "Users can search for football clubs from the homepage, which redirects them to an interactive Google Map displaying all relevant venues.",
+            desc: "Workspace-based isolation allows multiple unions (e.g., Frontera SD, The Locals) to exist on the same platform without data leakage.",
           },
           {
-            desc: "The map allows for dynamic filtering by club or venue name and provides a seamless discovery experience.",
+            desc: "Nested sub-collection structure in Firestore ensures scalable data separation.",
           },
         ],
       },
       {
-        featureTitle: "Dynamic Venue Information Cards",
+        featureTitle: "Real-Time Communication",
         featurePoints: [
           {
-            desc: "Each venue on the map has a detailed information card displaying its address, website, and a list of affiliated clubs.",
+            desc: "Instant group messaging powered by Firestore listeners with Optimistic UI updates for zero-latency feel.",
           },
           {
-            desc: "Leveraging the Google Distance Matrix API, the card shows the real-time distance and estimated travel time from the user's location (with their permission).",
+            desc: "Rich media support allowing image uploads directly within the chat stream.",
           },
         ],
       },
       {
-        featureTitle: "Comprehensive Admin Dashboard",
+        featureTitle: "Security & Role Management",
         featurePoints: [
           {
-            desc: "A secure, login-protected dashboard serves as the control center for the application. ",
+            desc: "Granular Role-Based Access Control (RBAC) distinguishing between Members, Board, and Admins.",
           },
           {
-            desc: "Admins have full CRUD capabilities to manage venues, football clubs, supporter groups, and events. The dashboard also features data visualization tools like a calendar (React Big Calendar) and metric charts (Recharts) to track platform activity.",
+            desc: "Strict Firestore Security Rules preventing cross-union access or unauthorized writes.",
+          },
+          { desc: "Age-gating compliance logic during registration." },
+        ],
+      },
+      {
+        featureTitle: "Digital Membership",
+        featurePoints: [
+          {
+            desc: "Dynamic QR Code generation for in-person event verification.",
+          },
+          { desc: "Admin-verified 'Union IDs' linked to user profiles." },
+        ],
+      },
+    ],
+
+    content: [
+      {
+        title: "The Problem",
+        blocks: [
+          {
+            type: "paragraph",
+            text: "Managing a large sports supporters group is a logistical nightmare. Leadership struggles to broadcast urgent updates through noisy WhatsApp groups, bylaws and chant sheets get lost in email chains, and verifying active members at tailgates is often manual and error-prone.",
           },
         ],
       },
       {
-        featureTitle: "Integrated Blog Platform",
-        featurePoints: [
+        title: "The Architecture",
+        blocks: [
           {
-            desc: "To further engage the community and improve SEO, a blog was built using Sanity as a headless CMS.",
+            type: "paragraph",
+            text: "I built Union Hub as a Progressive Web App (PWA) to offer a native-app experience without the friction of App Store downloads. The backend relies on a serverless Firebase architecture.",
           },
           {
-            desc: "This allows for easy creation and management of articles and news related to the San Diego soccer scene.",
+            type: "paragraph",
+            text: "One of the key technical decisions was the migration from a Relational SQL DB (Supabase) to a NoSQL Document DB (Firestore). This transition was driven by the need for:",
+          },
+          {
+            type: "list",
+            items: [
+              "Native real-time listeners for chat (avoiding polling).",
+              "Deeply nested sub-collections (Unions -> Groups -> Messages) which mapped perfectly to the multi-tenant mental model.",
+              "Unified Auth/Database security rules for granular permission checks.",
+            ],
+          },
+        ],
+      },
+      {
+        title: "Admin & Governance",
+        blocks: [
+          {
+            type: "paragraph",
+            text: "Beyond the mobile member experience, the application includes a comprehensive Desktop Admin Dashboard. This allows leadership to broadcast urgent announcements to the mobile home feed, upload official documents to the read-only Vault, and manage user roles and bans.",
           },
         ],
       },
     ],
+  }, // =================================================================
+  // Project 5: Diggin Vinyl Search
+  // =================================================================
+  {
+    imageUrl:
+      "https://qtmkwwvomuvavuoaqjcn.supabase.co/storage/v1/object/public/portfolio/main/diggin.png",
+    slug: "diggin-vinyl-search",
+    title: "Diggin.",
+    subTitle: "Chrome Extension for Vinyl Collectors",
+    description:
+      "A browser extension that instantly fetches Discogs market pricing for vinyl records via a right-click context menu.",
+    projectLink: "https://digginext.us/",
+    githubLink: "https://github.com/Jnmendza/diggin-ext",
+
+    projectSummary:
+      "Digging is a 'Brutalist' style Chrome Extension designed to reduce the friction between discovering music and collecting it. Instead of manually copying album names, opening a new tab, navigating to Discogs, and filtering for vinyl, users simply highlight text and right-click. The extension intelligently queries the Discogs API, filters for LP formats (ignoring CDs and singles), and injects a non-intrusive popup with the current market floor price directly into the active viewport.",
+
+    techStackDetailed: [
+      {
+        category: "Core",
+        technologies: "Manifest V3, JavaScript (ES6+)",
+        icons: [SiGooglechrome, SiJavascript],
+      },
+      {
+        category: "UI & Injection",
+        technologies: "React, Shadow DOM Injection",
+        icons: [SiReact, SiCss3],
+      },
+      {
+        category: "Data & Build",
+        technologies: "Discogs API, Vite",
+        icons: [FaCompactDisc, SiVite],
+      },
+    ],
+
+    features: [
+      {
+        featureTitle: "Context Menu Integration",
+        featurePoints: [
+          {
+            desc: "Adds a native right-click option to 'Search Vinyl' on any text selection.",
+          },
+          {
+            desc: "Sanitizes user selection to remove special characters and optimize API query relevance.",
+          },
+        ],
+      },
+      {
+        featureTitle: "Smart Market Pricing",
+        featurePoints: [
+          {
+            desc: "Fetches real-time market data from the Discogs Marketplace API.",
+          },
+          {
+            desc: "Implements a 'Market Floor' logic to display the lowest available price for Mint/Near Mint copies.",
+          },
+          {
+            desc: "Automatically filters out CD, Cassette, and Single formats to ensure LP relevance.",
+          },
+        ],
+      },
+      {
+        featureTitle: "Adaptive UI Injection",
+        featurePoints: [
+          {
+            desc: "Programmatically injects a React component into the host page's DOM.",
+          },
+          {
+            desc: "Calculates viewport constraints to intelligently render the popup above or below the cursor to prevent clipping.",
+          },
+          {
+            desc: "Uses isolated styling to ensure the extension UI is not affected by the host website's CSS.",
+          },
+        ],
+      },
+    ],
+
     content: [
       {
-        title: "Problem & Purpose",
+        title: "The Problem",
         blocks: [
           {
             type: "paragraph",
-            text: "The excitement around San Diego's football scene is at an all-time high. However, this growth has created a fragmented landscape for fans. As a supporter myself (member of Penya Blaugrana San Diego), I experienced firsthand the difficulty of finding official and unofficial watch parties for various clubs. Information is often scattered across social media, group chats, and disparate websites, making it a challenge for fans to find a place to watch a match with fellow supporters.",
-          },
-          {
-            type: "paragraph",
-            text: "The primary goal of Early Doors was to create a single source of truth for the local football community. I aimed to develop a robust, user-friendly platform that would:",
-          },
-          {
-            type: "list",
-            items: [
-              "Allow users to easily search for pubs and bars hosting games for their favorite teams.",
-              "Provide a seamless experience through Google OAuth and traditional authentication.",
-              "Build a powerful admin dashboard with full CRUD (Create, Read, Update, Delete) functionality to manage the platform's data.",
-              "Demonstrate a strong command of a modern front-end stack, full-stack development principles, and foundational skills like API construction, database management, and state management.",
-            ],
+            text: "For vinyl collectors, reading music reviews or browsing online stores is often a disconnected experience. You see an album you like, but checking its market value requires a tedious multi-step process: copy text, open Discogs, search, filter by format, and sort by condition. This friction often breaks the flow of discovery.",
           },
         ],
       },
       {
-        title: "Development Process",
+        title: "The Solution",
         blocks: [
           {
             type: "paragraph",
-            text: "A structured and professional workflow was essential to the project's success.",
-          },
-          {
-            type: "list",
-            items: [
-              "Design & Prototyping: The process began in Figma, where I designed wireframes and high-fidelity mockups for the landing page, the map interface, and the admin dashboard. This design-first approach included creating database schema diagrams and planning the API structure, which ensured a clear vision before writing a single line of code.",
-              "Version Control: The project was managed using Git, following the GitFlow branching model. Features and pages were developed on separate branches, ensuring the main branch remained stable and deployable. Each feature was integrated through a formal Pull Request (PR) process.",
-              "Task Management: Project tasks and feature development were meticulously tracked using a Kanban board in Notion, allowing for clear prioritization and progress monitoring from conception to completion.",
-            ],
+            text: "Diggin removes the context switch. By leveraging the Chrome Context Menu API, the extension brings the marketplace data to the user. I designed the UI with a 'Brutalist' aesthetic—high contrast black and yellow—to ensure readability on any background while maintaining a distinct brand identity.",
           },
         ],
       },
       {
-        title: "Technical Challenge & Solution",
-        blocks: [
-          {
-            type: "paragraph",
-            text: "The most significant technical challenge was implementing the multi-faceted search and filtering logic while ensuring optimal application performance. The goal was to allow users to find venues not just by name, but also by associated football clubs and supporter groups. Navigating this challenge deepened my understanding of data optimization, the importance of efficient state management, and the performance trade-offs between client-side and server-side data manipulation.",
-          },
-          {
-            type: "list",
-            items: [
-              "State Management with Zustand: I implemented Zustand for centralized state management. Its minimalistic API and hook-based approach helped in handling the global state of filters and search results efficiently without causing unnecessary component re-renders.",
-              "Optimized Data Fetching: I refactored my data retrieval logic to be more precise. Instead of fetching broad datasets and filtering on the client-side, I optimized the Prisma queries to perform the complex filtering and joining operations directly within the database. This significantly reduced the payload size and the processing load on the client.",
-              "Memoization: I strategically used React's memoization hooks (useMemo, useCallback) to prevent re-computation of expensive functions and re-rendering of components that did not have their props changed.",
-            ],
-          },
-        ],
-      },
-      {
-        title: "Lessons Learned & Future Scope",
+        title: "Technical Challenges",
         blocks: [
           {
             type: "list",
             items: [
-              "Reflection: This project was a tremendous learning experience. I gained a much deeper understanding of system design, the nuances of state management with Zustand, and the critical importance of data optimization. A key takeaway was the value of focusing on reaching a Minimum Viable Product (MVP) first, rather than getting sidetracked by adding features mid-development. I also learned to break down complex problems into smaller, more manageable tasks, which ultimately accelerated the development cycle. Had I prioritized optimizing my data retrieval strategies earlier, it would have saved considerable time.",
-              "Future Scope: The foundation is set for several exciting future enhancements. I envision integrating with social media APIs to automatically pull event data from supporter groups' feeds. Another ambitious feature would be to build an in-app community where fans can communicate, RSVP to events, and reserve space at venues, further solidifying Early Doors as the ultimate tool for San Diego's football community.",
+              "API 'Noise' Filtering: The Discogs search API is noisy. Searching for an album often returns CD reissues or 7-inch singles first. I implemented a strict filtering logic in the background script to prioritize 'LP' formats and 'Master' releases, ensuring the price shown reflects the actual vinyl record.",
+              "Viewport Awareness: A common issue with injected UIs is screen clipping. If a user selects text at the very bottom of the page, a standard popup gets cut off. I wrote a custom positioning hook that measures the selection's bounding client rect against `window.innerHeight`. If space is tight, the popup automatically inverts its position and animation direction to render *above* the cursor.",
+              "Manifest V3 Compliance: Moving away from persistent background pages to Service Workers required rethinking how state is handled. The extension uses `activeTab` and `scripting` permissions to inject code on-demand, ensuring a light memory footprint and compliance with modern browser security standards.",
             ],
           },
         ],
@@ -506,7 +566,187 @@ export const PROJECTS: Project[] = [
     ],
   },
   // =================================================================
-  // Project 4: Oaxaca DDLM 2023
+  // Project 5: Early Doors
+  // =================================================================
+  // {
+  //   imageUrl:
+  //     "https://qtmkwwvomuvavuoaqjcn.supabase.co/storage/v1/object/public/portfolio/main/ed-ss.png",
+  //   slug: "early-doors",
+  //   title: "Early Doors",
+  //   subTitle: "A Hub for San Diego's Football Supporters",
+  //   description:
+  //     "A map-based web app that helps fans in San Diego find venues hosting watch parties for football clubs from around the world. With an admin dashboard for managing events, clubs, and supporter groups, EarlyDoors empowers local fan communities to organize and discover matchday experiences in their city.",
+  //   projectLink: "https://earlydoors.vercel.app/",
+  //   githubLink: "https://github.com/Jnmendza/earlydoors",
+  //   projectSummary:
+  //     "Early Doors is a web application designed to bridge the gap between San Diego's passionate football supporters and the local establishments that broadcast the games. As the city's soccer culture flourishes with the arrival of SDFC, this platform provides a vital service: 'Find your tribe and enjoy watching your club's games with the same passion and support.' The application features an interactive map for users to discover watch party venues and a comprehensive admin dashboard for managing all underlying data, including venues, clubs, supporter groups, and events.",
+  //   techStackDetailed: [
+  //     {
+  //       category: "Framework",
+  //       technologies: "Next.js 14 (App Router)",
+  //       icons: [RiNextjsLine],
+  //     },
+  //     {
+  //       category: "Language",
+  //       technologies: "TypeScript",
+  //       icons: [SiTypescript],
+  //     },
+  //     {
+  //       category: "Styling",
+  //       technologies: "Tailwind CSS, Shadcn/UI",
+  //       icons: [RiTailwindCssFill, SiShadcnui],
+  //     },
+  //     {
+  //       category: "State Mngmt",
+  //       technologies: "Zustand",
+  //       icons: [MdOutlineSdStorage],
+  //     },
+  //     {
+  //       category: "Form Mngmt",
+  //       technologies: "React Hook Form with Zod",
+  //       icons: [SiZod, SiReacthookform],
+  //     },
+  //     {
+  //       category: "Database/Backend",
+  //       technologies: "Supabase (PostgreSQL), Prisma",
+  //       icons: [RiSupabaseLine, SiPrisma],
+  //     },
+  //     { category: "CMS (Blog)", technologies: "Sanity.io", icons: [SiSanity] },
+  //     {
+  //       category: "APIs & Services",
+  //       technologies: "Google Maps, Distance Matrix, OAuth",
+  //       icons: [SiGooglemaps],
+  //     },
+  //     {
+  //       category: "Data Viz (Admin)",
+  //       technologies: "Recharts",
+  //       icons: [IoBarChartSharp],
+  //     },
+  //     {
+  //       category: "Deployment",
+  //       technologies: "Vercel, GitHub",
+  //       icons: [SiVercel, FaGithub],
+  //     },
+  //   ],
+  //   features: [
+  //     {
+  //       featureTitle: "Interactive Venue Map",
+  //       featurePoints: [
+  //         {
+  //           desc: "Users can search for football clubs from the homepage, which redirects them to an interactive Google Map displaying all relevant venues.",
+  //         },
+  //         {
+  //           desc: "The map allows for dynamic filtering by club or venue name and provides a seamless discovery experience.",
+  //         },
+  //       ],
+  //     },
+  //     {
+  //       featureTitle: "Dynamic Venue Information Cards",
+  //       featurePoints: [
+  //         {
+  //           desc: "Each venue on the map has a detailed information card displaying its address, website, and a list of affiliated clubs.",
+  //         },
+  //         {
+  //           desc: "Leveraging the Google Distance Matrix API, the card shows the real-time distance and estimated travel time from the user's location (with their permission).",
+  //         },
+  //       ],
+  //     },
+  //     {
+  //       featureTitle: "Comprehensive Admin Dashboard",
+  //       featurePoints: [
+  //         {
+  //           desc: "A secure, login-protected dashboard serves as the control center for the application. ",
+  //         },
+  //         {
+  //           desc: "Admins have full CRUD capabilities to manage venues, football clubs, supporter groups, and events. The dashboard also features data visualization tools like a calendar (React Big Calendar) and metric charts (Recharts) to track platform activity.",
+  //         },
+  //       ],
+  //     },
+  //     {
+  //       featureTitle: "Integrated Blog Platform",
+  //       featurePoints: [
+  //         {
+  //           desc: "To further engage the community and improve SEO, a blog was built using Sanity as a headless CMS.",
+  //         },
+  //         {
+  //           desc: "This allows for easy creation and management of articles and news related to the San Diego soccer scene.",
+  //         },
+  //       ],
+  //     },
+  //   ],
+  //   content: [
+  //     {
+  //       title: "Problem & Purpose",
+  //       blocks: [
+  //         {
+  //           type: "paragraph",
+  //           text: "The excitement around San Diego's football scene is at an all-time high. However, this growth has created a fragmented landscape for fans. As a supporter myself (member of Penya Blaugrana San Diego), I experienced firsthand the difficulty of finding official and unofficial watch parties for various clubs. Information is often scattered across social media, group chats, and disparate websites, making it a challenge for fans to find a place to watch a match with fellow supporters.",
+  //         },
+  //         {
+  //           type: "paragraph",
+  //           text: "The primary goal of Early Doors was to create a single source of truth for the local football community. I aimed to develop a robust, user-friendly platform that would:",
+  //         },
+  //         {
+  //           type: "list",
+  //           items: [
+  //             "Allow users to easily search for pubs and bars hosting games for their favorite teams.",
+  //             "Provide a seamless experience through Google OAuth and traditional authentication.",
+  //             "Build a powerful admin dashboard with full CRUD (Create, Read, Update, Delete) functionality to manage the platform's data.",
+  //             "Demonstrate a strong command of a modern front-end stack, full-stack development principles, and foundational skills like API construction, database management, and state management.",
+  //           ],
+  //         },
+  //       ],
+  //     },
+  //     {
+  //       title: "Development Process",
+  //       blocks: [
+  //         {
+  //           type: "paragraph",
+  //           text: "A structured and professional workflow was essential to the project's success.",
+  //         },
+  //         {
+  //           type: "list",
+  //           items: [
+  //             "Design & Prototyping: The process began in Figma, where I designed wireframes and high-fidelity mockups for the landing page, the map interface, and the admin dashboard. This design-first approach included creating database schema diagrams and planning the API structure, which ensured a clear vision before writing a single line of code.",
+  //             "Version Control: The project was managed using Git, following the GitFlow branching model. Features and pages were developed on separate branches, ensuring the main branch remained stable and deployable. Each feature was integrated through a formal Pull Request (PR) process.",
+  //             "Task Management: Project tasks and feature development were meticulously tracked using a Kanban board in Notion, allowing for clear prioritization and progress monitoring from conception to completion.",
+  //           ],
+  //         },
+  //       ],
+  //     },
+  //     {
+  //       title: "Technical Challenge & Solution",
+  //       blocks: [
+  //         {
+  //           type: "paragraph",
+  //           text: "The most significant technical challenge was implementing the multi-faceted search and filtering logic while ensuring optimal application performance. The goal was to allow users to find venues not just by name, but also by associated football clubs and supporter groups. Navigating this challenge deepened my understanding of data optimization, the importance of efficient state management, and the performance trade-offs between client-side and server-side data manipulation.",
+  //         },
+  //         {
+  //           type: "list",
+  //           items: [
+  //             "State Management with Zustand: I implemented Zustand for centralized state management. Its minimalistic API and hook-based approach helped in handling the global state of filters and search results efficiently without causing unnecessary component re-renders.",
+  //             "Optimized Data Fetching: I refactored my data retrieval logic to be more precise. Instead of fetching broad datasets and filtering on the client-side, I optimized the Prisma queries to perform the complex filtering and joining operations directly within the database. This significantly reduced the payload size and the processing load on the client.",
+  //             "Memoization: I strategically used React's memoization hooks (useMemo, useCallback) to prevent re-computation of expensive functions and re-rendering of components that did not have their props changed.",
+  //           ],
+  //         },
+  //       ],
+  //     },
+  //     {
+  //       title: "Lessons Learned & Future Scope",
+  //       blocks: [
+  //         {
+  //           type: "list",
+  //           items: [
+  //             "Reflection: This project was a tremendous learning experience. I gained a much deeper understanding of system design, the nuances of state management with Zustand, and the critical importance of data optimization. A key takeaway was the value of focusing on reaching a Minimum Viable Product (MVP) first, rather than getting sidetracked by adding features mid-development. I also learned to break down complex problems into smaller, more manageable tasks, which ultimately accelerated the development cycle. Had I prioritized optimizing my data retrieval strategies earlier, it would have saved considerable time.",
+  //             "Future Scope: The foundation is set for several exciting future enhancements. I envision integrating with social media APIs to automatically pull event data from supporter groups' feeds. Another ambitious feature would be to build an in-app community where fans can communicate, RSVP to events, and reserve space at venues, further solidifying Early Doors as the ultimate tool for San Diego's football community.",
+  //           ],
+  //         },
+  //       ],
+  //     },
+  //   ],
+  // },
+  // =================================================================
+  // Project 6: Oaxaca DDLM 2023
   // =================================================================
   // {
   //   imageUrl:
@@ -678,7 +918,7 @@ export const PROJECTS: Project[] = [
   //   ],
   // },
   // =================================================================
-  // Project 5: CD-Mixtape
+  // Project 7: CD-Mixtape
   // =================================================================
   {
     imageUrl:
@@ -816,7 +1056,7 @@ export const PROJECTS: Project[] = [
     ],
   },
   // =================================================================
-  // Project 6: AI-Powered Quiz App
+  // Project 8: AI-Powered Quiz App
   // =================================================================
   {
     imageUrl:
@@ -958,7 +1198,7 @@ export const PROJECTS: Project[] = [
     ],
   },
   // =================================================================
-  // Project 7: AI-Powered Policy Summarizer
+  // Project 9: AI-Powered Policy Summarizer
   // =================================================================
   {
     imageUrl:
