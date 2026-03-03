@@ -64,7 +64,7 @@ export function Navbar() {
         {/* Desktop CTA */}
         <div className='hidden md:flex items-center gap-4'>
           <Link
-            href='https://qtmkwwvomuvavuoaqjcn.supabase.co/storage/v1/object/public/portfolio/main/J.Mendoza-resume.pdf'
+            href='https://qtmkwwvomuvavuoaqjcn.supabase.co/storage/v1/object/public/portfolio/main/Jonathan%20Mendoza%20-%20Resume.pdf'
             target='_blank'
             className='text-sm font-medium text-cyan-400 hover:text-cyan-300 transition-colors'
           >
@@ -122,7 +122,7 @@ export function Navbar() {
             ))}
             <div className='flex flex-col items-center gap-6 mt-4'>
               <Link
-                href='/J.Mendoza-resume.pdf'
+                href='https://qtmkwwvomuvavuoaqjcn.supabase.co/storage/v1/object/public/portfolio/main/Jonathan%20Mendoza%20-%20Resume.pdf'
                 target='_blank'
                 onClick={() => setIsOpen(false)}
                 className='text-lg font-medium text-cyan-400'
